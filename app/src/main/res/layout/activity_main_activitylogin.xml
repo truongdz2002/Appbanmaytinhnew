@@ -25,6 +25,7 @@
 
 
         <EditText
+            android:id="@+id/edGmailLogin"
             android:layout_width="150pt"
             android:layout_height="48dp"
             android:layout_margin="20dp"
@@ -34,11 +35,12 @@
             android:textSize="20dp" />
 
         <EditText
+            android:id="@+id/edPasswordLogin"
             android:layout_width="150pt"
             android:layout_height="48dp"
             android:layout_margin="3dp"
             android:ems="6"
-            android:hint="Pass world"
+            android:hint="Password"
             android:inputType="textPassword"
             android:textSize="20dp" />
 
