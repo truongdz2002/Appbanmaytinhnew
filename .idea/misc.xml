@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/PHUONG NAM/AndroidStudioProjects/Appbanmaytinh/app/src/main/res/drawable/button.xml" value="0.189" />
+        <entry key="..\:/Users/PHUONG NAM/AndroidStudioProjects/Appbanmaytinh/app/src/main/res/layout/a_s_u_s.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/PHUONG NAM/AndroidStudioProjects/Appbanmaytinh/app/src/main/res/layout/a_s_u_s_list.xml" value="0.19010416666666666" />
+        <entry key="..\:/Users/PHUONG NAM/AndroidStudioProjects/Appbanmaytinh/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/Users/PHUONG NAM/AndroidStudioProjects/Appbanmaytinh/app/src/main/res/layout/activity_main_activitylogin.xml" value="0.22" />
+        <entry key="..\:/Users/PHUONG NAM/AndroidStudioProjects/Appbanmaytinh/app/src/main/res/layout/asus.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/PHUONG NAM/AndroidStudioProjects/Appbanmaytinh/app/src/main/res/layout/computer.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/PHUONG NAM/AndroidStudioProjects/Appbanmaytinh/app/src/main/res/layout/d_e_l_l.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/PHUONG NAM/AndroidStudioProjects/Appbanmaytinh/app/src/main/res/layout/d_e_l_l_list.xml" value="0.19010416666666666" />
+        <entry key="..\:/Users/PHUONG NAM/AndroidStudioProjects/Appbanmaytinh/app/src/main/res/layout/dell.xml" value="0.18" />
+        <entry key="..\:/Users/PHUONG NAM/AndroidStudioProjects/Appbanmaytinh/app/src/main/res/layout/fragment_a_s_u_s.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/PHUONG NAM/AndroidStudioProjects/Appbanmaytinh/app/src/main/res/layout/fragment_d_e_l_l_list.xml" value="0.19010416666666666" />
+        <entry key="..\:/Users/PHUONG NAM/AndroidStudioProjects/Appbanmaytinh/app/src/main/res/layout/fragment_detail.xml" value="0.18" />
+        <entry key="..\:/Users/PHUONG NAM/AndroidStudioProjects/Appbanmaytinh/app/src/main/res/layout/fragment_loai.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/PHUONG NAM/AndroidStudioProjects/Appbanmaytinh/app/src/main/res/layout/fragment_loai_list.xml" value="0.19010416666666666" />
+        <entry key="..\:/Users/PHUONG NAM/AndroidStudioProjects/Appbanmaytinh/app/src/main/res/layout/fragment_m_a_c_k_b_o_o_k_list.xml" value="0.19010416666666666" />
+        <entry key="..\:/Users/PHUONG NAM/AndroidStudioProjects/Appbanmaytinh/app/src/main/res/layout/home.xml" value="0.25" />
+        <entry key="..\:/Users/PHUONG NAM/AndroidStudioProjects/Appbanmaytinh/app/src/main/res/layout/infor.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/PHUONG NAM/AndroidStudioProjects/Appbanmaytinh/app/src/main/res/layout/item_computer.xml" value="0.33" />
+        <entry key="..\:/Users/PHUONG NAM/AndroidStudioProjects/Appbanmaytinh/app/src/main/res/layout/item_home.xml" value="0.22" />
+        <entry key="..\:/Users/PHUONG NAM/AndroidStudioProjects/Appbanmaytinh/app/src/main/res/layout/item_quangcao.xml" value="0.19010416666666666" />
+        <entry key="..\:/Users/PHUONG NAM/AndroidStudioProjects/Appbanmaytinh/app/src/main/res/layout/layout_toolbar.xml" value="0.2" />
+        <entry key="..\:/Users/PHUONG NAM/AndroidStudioProjects/Appbanmaytinh/app/src/main/res/layout/login.xml" value="0.1" />
+        <entry key="..\:/Users/PHUONG NAM/AndroidStudioProjects/Appbanmaytinh/app/src/main/res/layout/m_a_c_k_b_o_o_k_list.xml" value="0.19010416666666666" />
+        <entry key="..\:/Users/PHUONG NAM/AndroidStudioProjects/Appbanmaytinh/app/src/main/res/layout/macbook.xml" value="0.1859375" />
+        <entry key="..\:/Users/PHUONG NAM/AndroidStudioProjects/Appbanmaytinh/app/src/main/res/menu/thanhluachon.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/PHUONG NAM/AndroidStudioProjects/Appbanmaytinh2/Appbanmaytinh/app/src/main/res/layout/fragment_detail.xml" value="0.2" />
+        <entry key="..\:/Users/PHUONG NAM/AndroidStudioProjects/Appbanmaytinh2/Appbanmaytinh/app/src/main/res/layout/fragment_gio_hang.xml" value="0.19701086956521738" />
+        <entry key="..\:/Users/PHUONG NAM/AndroidStudioProjects/Appbanmaytinh2/Appbanmaytinh/app/src/main/res/layout/item_giohang.xml" value="0.19701086956521738" />
+        <entry key="..\:/Users/PHUONG NAM/AndroidStudioProjects/Appbanmaytinh2/Appbanmaytinh/app/src/main/res/menu/thanhluachon.xml" value="0.2" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

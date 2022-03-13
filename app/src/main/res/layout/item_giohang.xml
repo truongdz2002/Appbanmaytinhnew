@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+<ImageView
+    android:id="@+id/anhspmua"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:src="@drawable/asus"/>
+    <TextView
+        android:id="@+id/tenspmua"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:textSize="16dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="7dp"
+        android:text="Tên sản phẩm:"/>
+    <TextView
+        android:id="@+id/giaspmua"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:textSize="16dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="7dp"
+        android:text="Giá sản phẩm:"/>
+    <TextView
+        android:id="@+id/slspmua"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:textSize="16dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="7dp"
+        android:text="Số lượng phẩm:"/>
+
+</LinearLayout>

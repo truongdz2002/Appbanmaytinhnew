@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<group android:checkableBehavior="single">
+<item
+    android:id="@+id/home"
+    android:title="@string/trang_chinh"
+    android:icon="@drawable/ic_home"/>
+<item
+    android:id="@+id/ASUS"
+    android:title="ASUS"
+    android:icon="@drawable/asus"/>
+<item
+    android:id="@+id/DELL"
+    android:title="DELL"
+    android:icon="@drawable/dell"/>
+<item
+    android:id="@+id/MACBOOK"
+    android:title="MACBOOK"
+    android:icon="@drawable/macbook"/>
+<item
+    android:id="@+id/infor"
+    android:title="@string/thong_tin"
+    android:icon="@drawable/ic_thong_tin"/>
+<item
+    android:id="@+id/G"
+    android:title="Giỏ hàng"
+    android:icon="@drawable/ic_shopping"/>
+<item
+    android:id="@+id/lienhe"
+    android:title="@string/Lien_he"
+    android:icon="@drawable/ic_lien_he"/>
+
+</group>
+</menu>

@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Cửa hàng bán máy tính</string>
+    <string name="trang_chinh">Trang chính</string>
+    <string name="ASUS">ASUS</string>
+    <string name="DELL">DELL</string>
+    <string name="MACBOOK">MACKBOOK</string>
+    <string name="thong_tin">Thông tin</string>
+    <string name="Lien_he">Liên hệ</string>
+    <string name="G">Giỏ hàng</string>
+    <string name="naviopen">open</string>
+    <string name="naviclose">close</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
