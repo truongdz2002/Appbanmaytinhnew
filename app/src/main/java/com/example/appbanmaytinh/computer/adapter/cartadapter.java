@@ -17,13 +17,13 @@ import java.util.List;
 public class cartadapter extends RecyclerView.Adapter<cartadapter.cartViewHolder> {
     private Context context;
     private List<cart> listcart;
-    /*public cartadapter(List<cart> listcart) {
+    public cartadapter(List<cart> listcart) {
         this.listcart = listcart;
     }
 
-   // public cartadapter(Context context) {
+   public cartadapter(Context context) {
         this.context = context;
-    }*/
+    }
 
     public void setdata(List<cart> list)
     {
@@ -48,6 +48,7 @@ public class cartadapter extends RecyclerView.Adapter<cartadapter.cartViewHolder
         holder.anhspmua.setImageResource(cart.getAnhspmua());
         holder.tenspmua.setText(cart.getTenspmua());
         holder.giaspmua.setText(cart.getGiaspmua());
+        holder.soluongmua.setText(cart.getSoluongmua());
 
     }
 
@@ -62,15 +63,18 @@ public class cartadapter extends RecyclerView.Adapter<cartadapter.cartViewHolder
 
     public class cartViewHolder extends RecyclerView.ViewHolder
     {
-        private ImageView anhspmua;
+       private ImageView anhspmua;
         private TextView tenspmua;
         private TextView giaspmua;
+        private TextView soluongmua;
+
 
         public cartViewHolder(@NonNull View itemView) {
             super(itemView);
             anhspmua= (ImageView)itemView.findViewById(R.id.anhspmua);
             tenspmua=(TextView)itemView.findViewById(R.id.tenspmua);
             giaspmua=(TextView)itemView.findViewById(R.id.giaspmua);
+            soluongmua=(TextView) itemView.findViewById(R.id.slspmua);
 
         }
     }

@@ -12,6 +12,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
+import android.widget.Toolbar;
+
+import com.example.appbanmaytinh.computer.detil;
 
 import com.example.appbanmaytinh.MainActivity;
 import com.example.appbanmaytinh.R;
@@ -45,29 +49,44 @@ public class gio_hang extends Fragment {
        nmainActivity=(MainActivity) getActivity();
        lv4=view.findViewById(R.id.lv4);
        tt=view.findViewById(R.id.tt);
-       cartadapter adapter =new cartadapter();
-       mlistcart=new ArrayList<>();
-       adapter.setdata(mlistcart);
-       lv4.setAdapter(adapter);
-       addlv4();
+       adapter=new cartadapter(getlistcart());
+        //adapter =new cartadapter();
+        /*mlistcart=new ArrayList<>();
+        Bundle bundle=getArguments();
+        String tensp= bundle.getString("tensp").toString().trim();
+        String giasp=bundle.getString("giasp").toString().trim();
+        cart cart=new cart(tensp,giasp);
+        databasecart.getInstance(nmainActivity).cart2().insertcart(cart);
+       // Toast.makeText(nmainActivity,"thanh cong",Toast.LENGTH_SHORT).show();
+        mlistcart=databasecart.getInstance(nmainActivity).cart2().getListCart();
+        //adapter.setdata(mlistcart);*/
+        //adapter.setdata(mlistcart);
+         lv4.setAdapter(adapter);
+       //addlv4();
        GridLayoutManager gridLayoutManager=new GridLayoutManager(nmainActivity,1);
        lv4.setLayoutManager(gridLayoutManager);
        RecyclerView.ItemDecoration itemDecoration=new DividerItemDecoration(nmainActivity,DividerItemDecoration.VERTICAL);
        lv4.addItemDecoration(itemDecoration);
         return view;
     }
-    /*public List<cart> getlistcart()
+    public List<cart> getlistcart()
     {
         List<cart> list=new ArrayList<>();
+
         Bundle bundle=getArguments();
+
         if(bundle!=null)
+
         {
-           String tensp= bundle.getString("tensp");
+            detil detil=(detil) bundle.get("detail");
+           /*String tensp= bundle.getString("tensp");
            String giasp=bundle.getString("giasp");
-           cart c=new cart(R.drawable.asus,tensp,giasp);
-           databasecart.getInstance(nmainActivity).cart2().insertcart();
-           mlistcart=databasecart.getInstance(nmainActivity).cart2().getListCart(c);
-           adapter.setdata(mlistcart);
+           String slsp=bundle.getString("slsp");
+           list.add(new cart(tensp,giasp,slsp));*/
+            if(detil!=null){
+                list.add(new cart(detil.getHinhpcdetail(),detil.getTenpcdetail(), detil.getGiapcdetail(), detil.getSoluongmuadetail()));
+                Toast.makeText(nmainActivity,"thanhcong",Toast.LENGTH_SHORT).show();
+            }
 
         }
 
@@ -75,17 +94,18 @@ public class gio_hang extends Fragment {
 
     }
 
-    }*/
-        public void addlv4()
+    }
+       /* public void addlv4()
         {
             Bundle bundle=getArguments();
             String tensp= bundle.getString("tensp").toString().trim();
             String giasp=bundle.getString("giasp").toString().trim();
-            cart cart=new cart(R.drawable.asus,tensp,giasp);
+            cart cart=new cart(tensp,giasp);
             databasecart.getInstance(nmainActivity).cart2().insertcart(cart);
-            //mlistcart=databasecart.getInstance(nmainActivity).cart2().getListCart(cart);
+            Toast.makeText(nmainActivity,"thanh cong",Toast.LENGTH_SHORT).show();
+            mlistcart=databasecart.getInstance(nmainActivity).cart2().getListCart();
             adapter.setdata(mlistcart);
 
-        }
-}
+        }*/
+
 

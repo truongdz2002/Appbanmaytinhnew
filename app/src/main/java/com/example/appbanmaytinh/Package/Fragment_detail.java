@@ -1,5 +1,6 @@
 package com.example.appbanmaytinh.Package;
 
+import android.app.Activity;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -11,8 +12,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.appbanmaytinh.computer.computer;
+import com.example.appbanmaytinh.computer.detil;
 
 import com.example.appbanmaytinh.R;
 
@@ -23,6 +26,8 @@ public class Fragment_detail extends Fragment {
     private EditText tvQuantity;
     private Button take, add, tru;
     private View view;
+    private  detil detil;
+    private Activity mActivity;
 
 
     public Fragment_detail() {
@@ -42,25 +47,10 @@ public class Fragment_detail extends Fragment {
         add = view.findViewById(R.id.add);
         tru = view.findViewById(R.id.tru);
         sp = view.findViewById(R.id.sp);
-        int s1 = Integer.parseInt(tvQuantity.getText().toString());
-        if (s1 > 10) {
-            add.setVisibility(View.INVISIBLE);
-            tru.setVisibility(View.VISIBLE);
+        mActivity=(Activity) getActivity();
 
-        } else if (s1 < 1) {
-            add.setVisibility(View.VISIBLE);
-            tru.setVisibility(View.INVISIBLE);
-        } else if (s1 > 1) {
-            add.setVisibility(View.VISIBLE);
-            tru.setVisibility(View.VISIBLE);
-        }
 
-        take.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                sendcart();
-            }
-        });
+
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -68,6 +58,18 @@ public class Fragment_detail extends Fragment {
                 int a = Integer.parseInt(t);
                 int slmn = a + 1;
                 tvQuantity.setText(Integer.toString(slmn));
+                int s1 = Integer.parseInt(tvQuantity.getText().toString());
+                if (s1 == 10) {
+                    add.setVisibility(View.INVISIBLE);
+                    tru.setVisibility(View.VISIBLE);
+
+                } else if (s1 ==1) {
+                    add.setVisibility(View.VISIBLE);
+                    tru.setVisibility(View.INVISIBLE);
+                } else if (s1 > 1) {
+                    add.setVisibility(View.VISIBLE);
+                    tru.setVisibility(View.VISIBLE);
+                }
                 //Cần được convert int về string
             }
         });
@@ -78,18 +80,42 @@ public class Fragment_detail extends Fragment {
                 int a = Integer.parseInt(t);
                 int slmn = a - 1;
                 tvQuantity.setText(Integer.toString(slmn));
+                int s1 = Integer.parseInt(tvQuantity.getText().toString());
+                if (s1 == 10) {
+                    add.setVisibility(View.INVISIBLE);
+                    tru.setVisibility(View.VISIBLE);
+
+                } else if (s1 == 1) {
+                    add.setVisibility(View.VISIBLE);
+                    tru.setVisibility(View.INVISIBLE);
+                } else if (s1 > 1) {
+                    add.setVisibility(View.VISIBLE);
+                    tru.setVisibility(View.VISIBLE);
+                }
 
             }
         });
         Bundle bundle = getArguments();
-        if (bundle != null) {
             computer computer = (computer) bundle.get("Anh");
-            if (computer != null) {
-                tv3.setText(computer.getTenpc());
-                tv4.setText(computer.getGiapc());
-                sp.setImageResource(computer.getHinh());
-            }
+            int hinhpcdetail=computer.getHinh();
+            String tenpcdetail=computer.getTenpc();
+            String giapcdetail=computer.getGiapc();
+            tv3.setText(tenpcdetail);
+            tv4.setText(giapcdetail);
+            sp.setImageResource(hinhpcdetail);
+        String sldetail=tvQuantity.getText().toString();
+        detil=new detil(hinhpcdetail,tenpcdetail,giapcdetail,sldetail);
+        if(detil==null)
+        {
+            Toast.makeText(mActivity,"ko co tai nguyen",Toast.LENGTH_SHORT).show();
+
         }
+        take.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                sendcart();
+            }
+        });
 
         return view;
 
@@ -99,9 +125,7 @@ public class Fragment_detail extends Fragment {
     public void sendcart() {
         gio_hang gio_hang = new gio_hang();
         Bundle bundle = new Bundle();
-        bundle.putString("slsp", tvQuantity.getText().toString());
-        bundle.putString("tensp", tv3.getText().toString());
-        bundle.putString("giasp", tv4.getText().toString());
+        bundle.putSerializable("detail",detil);
         gio_hang.setArguments(bundle);
         getFragmentManager().beginTransaction().replace(R.id.content, gio_hang).commit();
 

@@ -17,7 +17,8 @@ public abstract class databasecart extends RoomDatabase {
         if(instance==null)
         {
             instance= Room.databaseBuilder(context.getApplicationContext(),databasecart.class,DATABASE_NAME)
-                    .allowMainThreadQueries().build();
+                    .allowMainThreadQueries()
+                    .build();
         }
         return instance;
 

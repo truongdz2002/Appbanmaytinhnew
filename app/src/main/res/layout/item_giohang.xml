@@ -8,29 +8,69 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:src="@drawable/asus"/>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
     <TextView
-        android:id="@+id/tenspmua"
-        android:layout_width="match_parent"
+        android:layout_width="110dp"
         android:layout_height="40dp"
         android:textSize="16dp"
         android:layout_marginStart="5dp"
         android:layout_marginTop="7dp"
-        android:text="Tên sản phẩm:"/>
-    <TextView
-        android:id="@+id/giaspmua"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:textSize="16dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="7dp"
-        android:text="Giá sản phẩm:"/>
-    <TextView
-        android:id="@+id/slspmua"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:textSize="16dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="7dp"
-        android:text="Số lượng phẩm:"/>
+        android:hint="Tên sản phẩm:"
+        android:textColorHint="#000"/>
+        <TextView
+            android:id="@+id/tenspmua"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:textSize="16dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="7dp"
+            android:text=""/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="110dp"
+            android:layout_height="40dp"
+            android:textSize="16dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="7dp"
+            android:hint="Giá sản phẩm mua:"
+            android:textColorHint="#000"/>
+        <TextView
+            android:id="@+id/giaspmua"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:textSize="16dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="7dp"
+            android:text="0"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="110dp"
+            android:layout_height="40dp"
+            android:textSize="16dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="7dp"
+            android:hint="số lượng sản phẩm:"
+            android:textColorHint="#000"/>
+        <TextView
+            android:id="@+id/slspmua"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:textSize="16dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="7dp"
+            android:text="0"/>
+    </LinearLayout>
+
 
 </LinearLayout>
