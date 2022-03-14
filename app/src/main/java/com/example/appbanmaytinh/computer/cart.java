@@ -11,6 +11,7 @@ public class cart {
     private String tenspmua;
     private String giaspmua;
     private String soluongmua;
+    private String tongtien;
 
     public int getId() {
         return id;
@@ -20,11 +21,12 @@ public class cart {
         this.id = id;
     }
 
-    public cart( int anhspmua,String tenspmua, String giaspmua,String soluongmua) {
+    public cart( int anhspmua,String tenspmua, String giaspmua,String soluongmua,String tongtien) {
         this.anhspmua = anhspmua;
         this.tenspmua = tenspmua;
         this.giaspmua = giaspmua;
         this.soluongmua=soluongmua;
+        this.tongtien=tongtien;
     }
 
     public String getSoluongmua() {
@@ -53,6 +55,14 @@ public class cart {
 
     public String getGiaspmua() {
         return giaspmua;
+    }
+
+    public String getTongtien() {
+        return tongtien;
+    }
+
+    public void setTongtien(String tongtien) {
+        this.tongtien = tongtien;
     }
 
     public void setGiaspmua(String giaspmua) {

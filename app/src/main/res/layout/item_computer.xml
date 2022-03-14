@@ -10,16 +10,36 @@
             android:layout_width="220dp"
             android:layout_height="200dp"
             android:src="@drawable/asus"/>
+        <TextView
+            android:id="@+id/tb"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="10dp"
+            android:layout_toRightOf="@+id/pc1"
+            android:text="Tên sp:"
+            android:textSize="20dp"
+            android:textColor="@color/black"/>
 
         <TextView
             android:id="@+id/tv1"
             android:layout_width="200dp"
             android:layout_height="40dp"
-            android:layout_marginStart="10dp"
-            android:layout_toRightOf="@+id/pc1"
+            android:layout_marginStart="30dp"
+            android:layout_toRightOf="@+id/tb1"
             android:text="ASUS"
             android:textSize="20dp"
             android:textColor="@color/black"/>
+        <TextView
+            android:id="@+id/tb1"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_below="@id/tv1"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@+id/pc1"
+            android:text="Giá:"
+            android:textSize="20dp"
+            android:textColor="#FF0000"/>
 
         <TextView
             android:id="@+id/tv2"
@@ -28,8 +48,8 @@
             android:layout_below="@id/tv1"
             android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
-            android:layout_toRightOf="@+id/pc1"
-            android:text="Giá:  14000000"
+            android:layout_toRightOf="@+id/tb1"
+            android:text="14000000"
             android:textSize="20dp"
             android:textColor="#FF0000"/>
 

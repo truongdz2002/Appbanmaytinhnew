@@ -49,6 +49,7 @@ public class cartadapter extends RecyclerView.Adapter<cartadapter.cartViewHolder
         holder.tenspmua.setText(cart.getTenspmua());
         holder.giaspmua.setText(cart.getGiaspmua());
         holder.soluongmua.setText(cart.getSoluongmua());
+        holder.tongtien.setText(cart.getTongtien());
 
     }
 
@@ -67,6 +68,7 @@ public class cartadapter extends RecyclerView.Adapter<cartadapter.cartViewHolder
         private TextView tenspmua;
         private TextView giaspmua;
         private TextView soluongmua;
+        private  TextView tongtien;
 
 
         public cartViewHolder(@NonNull View itemView) {
@@ -75,6 +77,7 @@ public class cartadapter extends RecyclerView.Adapter<cartadapter.cartViewHolder
             tenspmua=(TextView)itemView.findViewById(R.id.tenspmua);
             giaspmua=(TextView)itemView.findViewById(R.id.giaspmua);
             soluongmua=(TextView) itemView.findViewById(R.id.slspmua);
+            tongtien=(TextView) itemView.findViewById(R.id.ttspmua);
 
         }
     }

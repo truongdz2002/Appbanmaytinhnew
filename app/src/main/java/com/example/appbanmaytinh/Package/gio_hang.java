@@ -72,19 +72,23 @@ public class gio_hang extends Fragment {
     public List<cart> getlistcart()
     {
         List<cart> list=new ArrayList<>();
-
         Bundle bundle=getArguments();
 
         if(bundle!=null)
 
         {
             detil detil=(detil) bundle.get("detail");
-           /*String tensp= bundle.getString("tensp");
+            int gia=Integer.parseInt(detil.getGiapcdetail().toString());
+            int sl=Integer.parseInt(detil.getSoluongmuadetail().toString());
+            int t=0;
+              t=gia*sl;
+              String tt=Integer.toString(t);
+            /*String tensp= bundle.getString("tensp");
            String giasp=bundle.getString("giasp");
            String slsp=bundle.getString("slsp");
            list.add(new cart(tensp,giasp,slsp));*/
             if(detil!=null){
-                list.add(new cart(detil.getHinhpcdetail(),detil.getTenpcdetail(), detil.getGiapcdetail(), detil.getSoluongmuadetail()));
+                list.add(new cart(detil.getHinhpcdetail(),detil.getTenpcdetail(), detil.getGiapcdetail(), detil.getSoluongmuadetail(),tt));
                 Toast.makeText(nmainActivity,"thanhcong",Toast.LENGTH_SHORT).show();
             }
 

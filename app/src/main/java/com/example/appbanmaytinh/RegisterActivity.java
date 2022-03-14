@@ -93,7 +93,8 @@ public class RegisterActivity extends AppCompatActivity {
     private void checkValidateForm() {
         if (gmail.getText().toString().trim().matches(emailPattern) && password.getText().toString().trim().equals(rePassword.getText().toString().trim()) && !password.getText().toString().trim().equals("") && !rePassword.getText().toString().trim().equals("")) {
             btnRegister.setEnabled(true);
-        } else {
+        } else  {
+
             btnRegister.setEnabled(false);
         }
     }
