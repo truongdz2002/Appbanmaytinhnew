@@ -12,10 +12,11 @@ import androidx.annotation.Nullable;
 import com.example.appbanmaytinh.computer.khachhang;
 
 public class khachhangDBHelper extends SQLiteOpenHelper {
-    public static final  String DB_NAME = "quanlymaytinh.db";
-    public static final  int DB_VERSION = 1;
+    public static final String DB_NAME = "quanlymaytinh.db";
+    public static final int DB_VERSION = 1;
     public static final String TB_Name = "tbl_khachhang";
     Context context;
+
     public khachhangDBHelper(@Nullable Context context) {
         super(context, DB_NAME, null, DB_VERSION);
         this.context = context;
@@ -35,7 +36,7 @@ public class khachhangDBHelper extends SQLiteOpenHelper {
         onCreate(sqLiteDatabase);
     }
 
-    public boolean insertKH(khachhang khachhang){
+    public boolean insertKH(khachhang khachhang) {
         ContentValues contentValues = new ContentValues();
         //put du lieu can insert vao doi tuong contentValues
         contentValues.put("Gmail", khachhang.getGmail());
@@ -63,14 +64,14 @@ public class khachhangDBHelper extends SQLiteOpenHelper {
 //        contentValues.put("Gmail");
 //    }
 
-    public boolean checkKhIsExisted( String khGmail , String khPassword){
+    public boolean checkKhIsExisted(String khGmail, String khPassword) {
         SQLiteDatabase database = getReadableDatabase();
-        boolean check = false ;
+        boolean check = false;
         String sql = "SELECT * FROM " + TB_Name + " WHERE '" + khGmail + "' = Gmail AND '" + khPassword + "' = Password";
-        Cursor cursor= database.rawQuery(sql,null);
-        if (cursor.getCount() != 0){
+        Cursor cursor = database.rawQuery(sql, null);
+        if (cursor.getCount() > 0) {
             return true;
-        }
-        return false;
+        } else
+            return false;
     }
 }

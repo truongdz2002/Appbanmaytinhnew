@@ -28,12 +28,12 @@ public class MainActivitylogin extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 khachhangDBHelper = new khachhangDBHelper(MainActivitylogin.this);
-                boolean checkExisted = khachhangDBHelper.checkKhIsExisted(gmail.toString(),password.toString());
+                boolean checkExisted = khachhangDBHelper.checkKhIsExisted(gmail.getText().toString().trim(),password.getText().toString().trim());
                 if(checkExisted == true){
                     Intent intent = new Intent(MainActivitylogin.this, MainActivity.class);
                     startActivity(intent);
                 }else{
-                    Toast.makeText(MainActivitylogin.this, "Moi ban nhap day du thong tin", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivitylogin.this, "Sai gmail hoặc mật khẩu", Toast.LENGTH_SHORT).show();
                 }
 
             }
