@@ -54,16 +54,44 @@ public class Fragment_detail extends Fragment {
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-              btadd();
-               anbt();
+                String t = tvQuantity.getText().toString().trim();
+                int a = Integer.parseInt(t);
+                int slmn = a + 1;
+                tvQuantity.setText(Integer.toString(slmn));
+                int s1 = Integer.parseInt(tvQuantity.getText().toString());
+                if (s1 == 10) {
+                    add.setVisibility(View.INVISIBLE);
+                    tru.setVisibility(View.VISIBLE);
+
+                } else if (s1 ==1) {
+                    add.setVisibility(View.VISIBLE);
+                    tru.setVisibility(View.INVISIBLE);
+                } else if (s1 > 1) {
+                    add.setVisibility(View.VISIBLE);
+                    tru.setVisibility(View.VISIBLE);
+                }
+                //Cần được convert int về string
             }
         });
         tru.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               bttru();
-               anbt();
+                String t = tvQuantity.getText().toString().trim();
+                int a = Integer.parseInt(t);
+                int slmn = a - 1;
+                tvQuantity.setText(Integer.toString(slmn));
+                int s1 = Integer.parseInt(tvQuantity.getText().toString());
+                if (s1 == 10) {
+                    add.setVisibility(View.INVISIBLE);
+                    tru.setVisibility(View.VISIBLE);
 
+                } else if (s1 == 1) {
+                    add.setVisibility(View.VISIBLE);
+                    tru.setVisibility(View.INVISIBLE);
+                } else if (s1 > 1) {
+                    add.setVisibility(View.VISIBLE);
+                    tru.setVisibility(View.VISIBLE);
+                }
 
             }
         });
@@ -96,35 +124,6 @@ public class Fragment_detail extends Fragment {
         gio_hang.setArguments(bundle);
         getFragmentManager().beginTransaction().replace(R.id.content, gio_hang).commit();
 
-    }
-    private void btadd()
-    {
-        String t = tvQuantity.getText().toString().trim();
-        int a = Integer.parseInt(t);
-        int slmn = a +1;
-        tvQuantity.setText(Integer.toString(slmn));
-    }
-    private void bttru()
-    {
-        String t = tvQuantity.getText().toString().trim();
-        int a = Integer.parseInt(t);
-        int slmn = a - 1;
-        tvQuantity.setText(Integer.toString(slmn));
-    }
-    private void anbt()
-    {
-        int s1 = Integer.parseInt(tvQuantity.getText().toString());
-                if (s1 == 10) {
-                    add.setVisibility(View.INVISIBLE);
-                    tru.setVisibility(View.VISIBLE);
-
-                } else if (s1 == 1) {
-                    add.setVisibility(View.VISIBLE);
-                    tru.setVisibility(View.INVISIBLE);
-                } else if (s1 > 1) {
-                    add.setVisibility(View.VISIBLE);
-                    tru.setVisibility(View.VISIBLE);
-                }
     }
 
 

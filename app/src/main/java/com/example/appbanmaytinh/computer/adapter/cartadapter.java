@@ -17,13 +17,14 @@ import java.util.List;
 public class cartadapter extends RecyclerView.Adapter<cartadapter.cartViewHolder> {
     private Context context;
     private List<cart> listcart;
+    /*//gio hang co ban chua database
     public cartadapter(List<cart> listcart) {
         this.listcart = listcart;
-    }
+    }*/
 
-   public cartadapter(Context context) {
+/* public cartadapter(Context context) {
         this.context = context;
-    }
+                }*/
 
     public void setdata(List<cart> list)
     {
