@@ -54,7 +54,8 @@ public class cartadapter extends RecyclerView.Adapter<cartadapter.cartViewHolder
     }
 
     @Override
-    public int getItemCount() {
+    public int getItemCount()
+    {
         if(listcart!=null)
         {
             return listcart.size();

@@ -54,44 +54,16 @@ public class Fragment_detail extends Fragment {
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String t = tvQuantity.getText().toString().trim();
-                int a = Integer.parseInt(t);
-                int slmn = a + 1;
-                tvQuantity.setText(Integer.toString(slmn));
-                int s1 = Integer.parseInt(tvQuantity.getText().toString());
-                if (s1 == 10) {
-                    add.setVisibility(View.INVISIBLE);
-                    tru.setVisibility(View.VISIBLE);
-
-                } else if (s1 ==1) {
-                    add.setVisibility(View.VISIBLE);
-                    tru.setVisibility(View.INVISIBLE);
-                } else if (s1 > 1) {
-                    add.setVisibility(View.VISIBLE);
-                    tru.setVisibility(View.VISIBLE);
-                }
-                //Cần được convert int về string
+              btadd();
+               anbt();
             }
         });
         tru.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String t = tvQuantity.getText().toString().trim();
-                int a = Integer.parseInt(t);
-                int slmn = a - 1;
-                tvQuantity.setText(Integer.toString(slmn));
-                int s1 = Integer.parseInt(tvQuantity.getText().toString());
-                if (s1 == 10) {
-                    add.setVisibility(View.INVISIBLE);
-                    tru.setVisibility(View.VISIBLE);
+               bttru();
+               anbt();
 
-                } else if (s1 == 1) {
-                    add.setVisibility(View.VISIBLE);
-                    tru.setVisibility(View.INVISIBLE);
-                } else if (s1 > 1) {
-                    add.setVisibility(View.VISIBLE);
-                    tru.setVisibility(View.VISIBLE);
-                }
 
             }
         });
@@ -105,11 +77,6 @@ public class Fragment_detail extends Fragment {
             sp.setImageResource(hinhpcdetail);
         String sldetail=tvQuantity.getText().toString();
         detil=new detil(hinhpcdetail,tenpcdetail,giapcdetail,sldetail);
-        if(detil==null)
-        {
-            Toast.makeText(mActivity,"ko co tai nguyen",Toast.LENGTH_SHORT).show();
-
-        }
         take.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -129,6 +96,35 @@ public class Fragment_detail extends Fragment {
         gio_hang.setArguments(bundle);
         getFragmentManager().beginTransaction().replace(R.id.content, gio_hang).commit();
 
+    }
+    private void btadd()
+    {
+        String t = tvQuantity.getText().toString().trim();
+        int a = Integer.parseInt(t);
+        int slmn = a +1;
+        tvQuantity.setText(Integer.toString(slmn));
+    }
+    private void bttru()
+    {
+        String t = tvQuantity.getText().toString().trim();
+        int a = Integer.parseInt(t);
+        int slmn = a - 1;
+        tvQuantity.setText(Integer.toString(slmn));
+    }
+    private void anbt()
+    {
+        int s1 = Integer.parseInt(tvQuantity.getText().toString());
+                if (s1 == 10) {
+                    add.setVisibility(View.INVISIBLE);
+                    tru.setVisibility(View.VISIBLE);
+
+                } else if (s1 == 1) {
+                    add.setVisibility(View.VISIBLE);
+                    tru.setVisibility(View.INVISIBLE);
+                } else if (s1 > 1) {
+                    add.setVisibility(View.VISIBLE);
+                    tru.setVisibility(View.VISIBLE);
+                }
     }
 
 

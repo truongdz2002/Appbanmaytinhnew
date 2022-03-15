@@ -14,7 +14,7 @@ import android.widget.EditText;
 public class RegisterActivity extends AppCompatActivity {
     Button btnRegister;
     EditText gmail, password, rePassword;
-    String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
+    String emailPattern ="[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,7 +22,7 @@ public class RegisterActivity extends AppCompatActivity {
         setContentView(R.layout.activity_register);
         queryItem();
 
-        gmail.addTextChangedListener(new TextWatcher() {
+        gmail.addTextChangedListener(new TextWatcher(){
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
@@ -34,16 +34,13 @@ public class RegisterActivity extends AppCompatActivity {
             }
 
             @Override
-            public void afterTextChanged(Editable editable) {
+            public void afterTextChanged(Editable editable){
                 checkValidateForm();
-
             }
         });
-
-        password.addTextChangedListener(new TextWatcher() {
+        password.addTextChangedListener(new TextWatcher(){
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
             }
 
             @Override
