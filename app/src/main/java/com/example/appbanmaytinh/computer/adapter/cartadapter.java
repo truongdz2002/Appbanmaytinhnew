@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -17,7 +18,15 @@ import java.util.List;
 public class cartadapter extends RecyclerView.Adapter<cartadapter.cartViewHolder> {
     private Context context;
     private List<cart> listcart;
-    /*//gio hang co ban chua database
+    private ItemClick itemclick;
+    public interface ItemClick{
+        void deleteclick( cart cart);
+    }
+
+    public cartadapter(ItemClick itemclick) {
+        this.itemclick = itemclick;
+    }
+/*//gio hang co ban chua database
     public cartadapter(List<cart> listcart) {
         this.listcart = listcart;
     }*/
@@ -41,16 +50,47 @@ public class cartadapter extends RecyclerView.Adapter<cartadapter.cartViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull cartViewHolder holder, int position) {
-        cart cart=listcart.get(position);
+      final   cart cart=listcart.get(position);
         if(cart==null)
         {
             return;
         }
         holder.anhspmua.setImageResource(cart.getAnhspmua());
+        holder.anhspmua.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                itemclick.deleteclick(cart);
+            }
+        });
         holder.tenspmua.setText(cart.getTenspmua());
+        holder.tenspmua.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                itemclick.deleteclick(cart);
+            }
+        });
         holder.giaspmua.setText(cart.getGiaspmua());
+        holder.giaspmua.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                itemclick.deleteclick(cart);
+            }
+        });
         holder.soluongmua.setText(cart.getSoluongmua());
+        holder.soluongmua.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                itemclick.deleteclick(cart);
+            }
+        });
+
         holder.tongtien.setText(cart.getTongtien());
+        holder.tongtien.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                itemclick.deleteclick(cart);
+            }
+        });
 
     }
 
@@ -80,7 +120,6 @@ public class cartadapter extends RecyclerView.Adapter<cartadapter.cartViewHolder
             giaspmua=(TextView)itemView.findViewById(R.id.giaspmua);
             soluongmua=(TextView) itemView.findViewById(R.id.slspmua);
             tongtien=(TextView) itemView.findViewById(R.id.ttspmua);
-
         }
     }
 }

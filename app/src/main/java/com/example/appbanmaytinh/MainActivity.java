@@ -3,6 +3,7 @@ package com.example.appbanmaytinh;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AlertDialogLayout;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -13,14 +14,19 @@ import com.example.appbanmaytinh.Package.ASUS;
 import com.example.appbanmaytinh.Package.DELL;
 import com.example.appbanmaytinh.Package.Fragment_detail;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.MenuItem;
+import android.widget.Toast;
+import com.example.appbanmaytinh.computer.cart;
 
 import com.example.appbanmaytinh.Package.MACBOOK;
 import com.example.appbanmaytinh.Package.gio_hang;
 import com.example.appbanmaytinh.Package.home;
 import com.example.appbanmaytinh.computer.computer;
+import com.example.appbanmaytinh.computer.database.databasecart;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.navigation.NavigationView.OnNavigationItemSelectedListener;
 
@@ -125,6 +131,21 @@ public class MainActivity extends AppCompatActivity implements OnNavigationItemS
         fragment_detail.setArguments(bundle);
         fragmentTransaction.replace(R.id.content,fragment_detail);
         fragmentTransaction.commit();
+    }
+    public void deleteFragment( final cart cart)
+    {
+        new AlertDialog.Builder(this)
+                .setTitle("confirm delete cart")
+                .setMessage("Are you cart")
+                .setPositiveButton("yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        databasecart.getInstance(MainActivity.this).cart2().deletecart(cart);
+                        Toast.makeText(MainActivity.this,"Delete cart successfully",Toast.LENGTH_LONG).show();
+                    }
+                })
+                .setNegativeButton("no",null)
+                .show();
     }
 
 }

@@ -1,6 +1,7 @@
 package com.example.appbanmaytinh.computer.database;
 
 import androidx.room.Dao;
+import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
 
@@ -14,4 +15,6 @@ public interface cart2 {
     void insertcart(cart cart);
     @Query("SELECT * FROM CART")
     List<cart> getListCart();
+    @Delete
+    void deletecart(cart cart);
 }

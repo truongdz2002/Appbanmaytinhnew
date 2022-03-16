@@ -107,7 +107,7 @@
 
     <Button
         android:id="@+id/bttake"
-        android:layout_width="match_parent"
+        android:layout_width="120dp"
         android:layout_height="48dp"
         android:layout_marginStart="25dp"
         android:layout_marginTop="10dp"

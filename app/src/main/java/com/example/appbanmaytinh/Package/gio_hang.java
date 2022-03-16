@@ -52,8 +52,18 @@ public class gio_hang extends Fragment {
        /*//Co ban voi gio hang
         adapter=new cartadapter(getlistcart());
         lv4.setAdapter(adapter);*/
-        adapter =new cartadapter();
+        adapter =new cartadapter(new cartadapter.ItemClick() {
+            @Override
+            public void deleteclick(cart cart ) {
+                nmainActivity.deleteFragment(cart);
+                mlistcart = databasecart.getInstance(nmainActivity).cart2().getListCart();
+                adapter.setdata(mlistcart);
+
+            }
+        });
         mlistcart=new ArrayList<>();
+        mlistcart = databasecart.getInstance(nmainActivity).cart2().getListCart();
+        adapter.setdata(mlistcart);
         addlv4();
         lv4.setAdapter(adapter);
 
