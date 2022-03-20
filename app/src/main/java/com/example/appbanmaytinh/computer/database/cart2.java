@@ -17,4 +17,6 @@ public interface cart2 {
     List<cart> getListCart();
     @Delete
     void deletecart(cart cart);
+
+
 }

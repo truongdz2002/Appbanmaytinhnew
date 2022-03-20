@@ -31,6 +31,7 @@ public class MainActivitylogin extends AppCompatActivity {
                 boolean checkExisted = khachhangDBHelper.checkKhIsExisted(gmail.getText().toString().trim(),password.getText().toString().trim());
                 if(checkExisted == true){
                     Intent intent = new Intent(MainActivitylogin.this, MainActivity.class);
+                    //intent.putExtra("Gmail",gmail.getText().toString().trim());
                     startActivity(intent);
                 }else{
                     Toast.makeText(MainActivitylogin.this, "Sai gmail hoặc mật khẩu", Toast.LENGTH_SHORT).show();

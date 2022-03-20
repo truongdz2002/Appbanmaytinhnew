@@ -3,7 +3,6 @@ package com.example.appbanmaytinh;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.AlertDialogLayout;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -19,7 +18,10 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.MenuItem;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.appbanmaytinh.Package.in_for;
 import com.example.appbanmaytinh.computer.cart;
 
 import com.example.appbanmaytinh.Package.MACBOOK;
@@ -36,8 +38,12 @@ public class MainActivity extends AppCompatActivity implements OnNavigationItemS
     private static final int FRAGMENT_DELL=2;
     private static final int FRAGMENT_MACBOOK=3;
     private static final int FRAGMENT_CART=4;
+    private static final int FRAGMENT_INFOR=5;
     private DrawerLayout mDrawerLayout;
     private int mCurrentFragment=FRAGMENT_HOME;
+    private TextView account;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -97,6 +103,14 @@ public class MainActivity extends AppCompatActivity implements OnNavigationItemS
             {
                 replaceFragment(new gio_hang());
                 mCurrentFragment=FRAGMENT_CART;
+            }
+        }
+        else if(id==R.id.infor)
+        {
+            if(mCurrentFragment!=FRAGMENT_INFOR)
+            {
+                replaceFragment(new in_for());
+                mCurrentFragment=FRAGMENT_INFOR;
             }
         }
 

@@ -56,14 +56,12 @@ public class gio_hang extends Fragment {
             @Override
             public void deleteclick(cart cart ) {
                 nmainActivity.deleteFragment(cart);
-                mlistcart = databasecart.getInstance(nmainActivity).cart2().getListCart();
-                adapter.setdata(mlistcart);
+                reload();
 
             }
         });
         mlistcart=new ArrayList<>();
-        mlistcart = databasecart.getInstance(nmainActivity).cart2().getListCart();
-        adapter.setdata(mlistcart);
+        reload();
         addlv4();
         lv4.setAdapter(adapter);
 
@@ -115,10 +113,15 @@ public class gio_hang extends Fragment {
                 cart cart = new cart(detil.getHinhpcdetail(), detil.getTenpcdetail(), detil.getGiapcdetail(), detil.getSoluongmuadetail(), tt);
                 databasecart.getInstance(nmainActivity).cart2().insertcart(cart);
                 Toast.makeText(nmainActivity, "thanh cong", Toast.LENGTH_SHORT).show();
-                mlistcart = databasecart.getInstance(nmainActivity).cart2().getListCart();
-                adapter.setdata(mlistcart);
+                reload();
             }
         }
-}
+        public void reload()
+        {
+            mlistcart = databasecart.getInstance(nmainActivity).cart2().getListCart();
+            adapter.setdata(mlistcart);
+        }
+        }
+
 
 
