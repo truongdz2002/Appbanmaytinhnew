@@ -7,17 +7,27 @@ import androidx.room.PrimaryKey;
 public class inforkhachhang {
     @PrimaryKey(autoGenerate = true)
     private int id;
+    //private String gmail;
     private String name;
     private String date;
     private String sdt;
     private String diachi;
 
     public inforkhachhang(String name, String date, String sdt, String diachi) {
+       //this.gmail=gmail;
         this.name = name;
         this.date = date;
         this.sdt = sdt;
         this.diachi = diachi;
     }
+
+    /*public String getGmail() {
+        return gmail;
+    }*/
+
+    /*public void setGmail(String gmail) {
+        this.gmail = gmail;
+    }*/
 
     public String getName() {
         return name;

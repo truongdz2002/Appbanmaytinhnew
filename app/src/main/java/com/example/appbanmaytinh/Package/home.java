@@ -4,9 +4,12 @@ import android.content.Context;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -16,6 +19,7 @@ import android.widget.ViewFlipper;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.widget.SearchView;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DividerItemDecoration;
@@ -47,8 +51,10 @@ public class home extends Fragment  {
     private quangcaoadapter qcadapter;
     private  RecyclerView rcvcomputer;
     private MainActivity mainActivity;
+    private compurteradapter adapter;
     private List<quangcao> mlistsquangcao;
     private  Timer mtimer;
+    private EditText timkiem;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState)
@@ -57,10 +63,11 @@ public class home extends Fragment  {
        //phan san pham moi nhat
         mainActivity= (MainActivity) getActivity();
         rcvcomputer=view.findViewById(R.id.lv);
+        timkiem=view.findViewById(R.id.tk);
         Context context;
         GridLayoutManager gridLayoutManager=new GridLayoutManager(mainActivity, 2);
         rcvcomputer.setLayoutManager(gridLayoutManager);
-        compurteradapter adapter=new compurteradapter(getlistcomputer(), new compurteradapter.ItemClick() {
+        adapter=new compurteradapter(getlistcomputer(), new compurteradapter.ItemClick() {
             @Override
             public void onclickItem(computer computer) {
                 mainActivity.gotoDetailFragmet(computer);
@@ -79,7 +86,6 @@ public class home extends Fragment  {
         qcadapter.registerDataSetObserver(cr.getDataSetObserver());
         autoSlideImage();
         return view;
-
     }
     private List<quangcao> getlistqc()
     {
@@ -89,11 +95,28 @@ public class home extends Fragment  {
         list.add(new quangcao(R.drawable.img_2));
         list.add(new quangcao(R.drawable.img_3));
         list.add(new quangcao(R.drawable.quangcao1));
-
         return list;
     }
+    private void setclick()
+    {
+        timkiem.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
+            }
 
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                String s=timkiem.getText().toString();
+                adapter.shortmt(s);
+            }
+        });
+    }
     private List<computer> getlistcomputer()
     {
         List<computer> list=new ArrayList<>();
@@ -117,8 +140,6 @@ public class home extends Fragment  {
         list.add(new computer("MACBOOK","25000000",R.drawable.macbook));
         list.add(new computer("MACBOOK","25000000",R.drawable.macbook));
         list.add(new computer("MACBOOK","25000000",R.drawable.macbook));
-
-
         return list;
     }
     private void autoSlideImage()

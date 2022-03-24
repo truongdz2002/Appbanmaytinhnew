@@ -85,6 +85,23 @@ public class compurteradapter extends RecyclerView.Adapter< compurteradapter.com
         }
         return 0;
     }
+    public void shortmt(String s)
+    {
+        s=s.toUpperCase();
+        int k=0;
+        for(int i=0;i<listcomputer.size();i++)
+        {
+            computer cp=listcomputer.get(i);
+            String ten=cp.getTenpc().toUpperCase();
+            if(ten.indexOf(s)>=0)
+            {
+                listcomputer.set(i,listcomputer.get(k));
+                listcomputer.set(k,cp);
+                k++;
+            }
+        }
+        notifyDataSetChanged();
+    }
 
     public class compurterViewHolder extends RecyclerView.ViewHolder{
         private ImageView anhpc;

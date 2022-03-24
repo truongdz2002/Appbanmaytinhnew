@@ -112,7 +112,7 @@ public class gio_hang extends Fragment {
                 String tt = Integer.toString(t);
                 cart cart = new cart(detil.getHinhpcdetail(), detil.getTenpcdetail(), detil.getGiapcdetail(), detil.getSoluongmuadetail(), tt);
                 databasecart.getInstance(nmainActivity).cart2().insertcart(cart);
-                Toast.makeText(nmainActivity, "thanh cong", Toast.LENGTH_SHORT).show();
+                Toast.makeText(nmainActivity, "Đã nhận hàng muốn mua thành công", Toast.LENGTH_SHORT).show();
                 reload();
             }
         }

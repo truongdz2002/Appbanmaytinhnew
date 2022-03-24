@@ -8,12 +8,16 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
+import com.example.appbanmaytinh.Package.in_for;
 import com.example.appbanmaytinh.computer.database.khachhangDBHelper;
 
 public class MainActivitylogin extends AppCompatActivity {
     Button login,btnRegister;
     EditText gmail , password;
+    private String email;
     khachhangDBHelper khachhangDBHelper;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +35,8 @@ public class MainActivitylogin extends AppCompatActivity {
                 boolean checkExisted = khachhangDBHelper.checkKhIsExisted(gmail.getText().toString().trim(),password.getText().toString().trim());
                 if(checkExisted == true){
                     Intent intent = new Intent(MainActivitylogin.this, MainActivity.class);
-                    //intent.putExtra("Gmail",gmail.getText().toString().trim());
+                    String mail=gmail.getText().toString().trim();
+                    intent.putExtra("Gmail",mail);
                     startActivity(intent);
                 }else{
                     Toast.makeText(MainActivitylogin.this, "Sai gmail hoặc mật khẩu", Toast.LENGTH_SHORT).show();
@@ -39,7 +44,8 @@ public class MainActivitylogin extends AppCompatActivity {
 
             }
         });
-
+//123@gmail.com
+        //123456
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -47,5 +53,10 @@ public class MainActivitylogin extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+
+
+    public String getEmail() {
+        return email;
     }
 }
