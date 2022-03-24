@@ -6,14 +6,17 @@ import android.os.Handler;
 import android.os.Looper;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.ViewFlipper;
 
 import androidx.annotation.NonNull;
@@ -76,6 +79,7 @@ public class home extends Fragment  {
         rcvcomputer.setAdapter(adapter);
         RecyclerView.ItemDecoration itemDecoration=new DividerItemDecoration(mainActivity,DividerItemDecoration.VERTICAL);
         rcvcomputer.addItemDecoration(itemDecoration);
+        setclick();
         // phan chay quang cao
         vp=view.findViewById(R.id.vp);
         cr=view.findViewById(R.id.cr);
@@ -99,23 +103,18 @@ public class home extends Fragment  {
     }
     private void setclick()
     {
-        timkiem.addTextChangedListener(new TextWatcher() {
+        timkiem.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable editable) {
-                String s=timkiem.getText().toString();
-                adapter.shortmt(s);
+            public boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {
+                if(i== EditorInfo.IME_ACTION_SEARCH)
+                {
+                    String s=timkiem.getText().toString();
+                    adapter.shortmt(s);
+                }
+                return false;
             }
         });
+
     }
     private List<computer> getlistcomputer()
     {

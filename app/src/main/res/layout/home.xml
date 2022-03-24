@@ -34,12 +34,16 @@
         android:textSize="20dp"
        android:textColor="@android:color/holo_red_dark"/>
 
-           <androidx.appcompat.widget.SearchView
+           <EditText
                android:id="@+id/tk"
-               android:layout_width="200dp"
-               android:layout_height="35dp"
+               android:layout_width="230dp"
+               android:layout_height="50dp"
                android:layout_toRightOf="@+id/tv0"
                android:layout_marginRight="5dp"
+               android:gravity="center"
+               android:hint="Sear"
+               android:inputType="text"
+               android:imeOptions="actionSearch"
                android:background="@drawable/button"/>
        </RelativeLayout>
     <androidx.recyclerview.widget.RecyclerView
