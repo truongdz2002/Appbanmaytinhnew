@@ -44,7 +44,8 @@
                android:hint="Sear"
                android:inputType="text"
                android:imeOptions="actionSearch"
-               android:background="@drawable/button"/>
+               android:background="@drawable/button"
+               android:visibility="invisible"/>
        </RelativeLayout>
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/lv"
