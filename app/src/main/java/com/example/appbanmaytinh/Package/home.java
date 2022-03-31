@@ -114,7 +114,6 @@ public class home extends Fragment  {
                 return false;
             }
         });
-
     }
     private List<computer> getlistcomputer()
     {
