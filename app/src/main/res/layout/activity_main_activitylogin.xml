@@ -18,7 +18,7 @@
     <LinearLayout
         android:id="@+id/line1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="219dp"
         android:layout_centerInParent="true"
         android:gravity="center"
         android:orientation="vertical">
@@ -32,7 +32,7 @@
             android:ems="15"
             android:hint="Gmail"
             android:inputType="textEmailAddress"
-            android:textSize="20dp" />
+            android:textSize="20sp" />
 
         <EditText
             android:id="@+id/edPasswordLogin"
@@ -52,68 +52,73 @@
             android:text="Hiển thị lỗi khi đăng nhâp"
             android:textColor="@color/black"
             android:textSize="15dp"
-            android:visibility="gone"/>
+            android:visibility="gone" />
 
-        <LinearLayout
+        <!--        <androidx.constraintlayout.widget.ConstraintLayout-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="79dp"-->
+        <!--            android:orientation="horizontal">-->
+
+        <!--            <Button-->
+        <!--                android:id="@+id/Register"-->
+        <!--                android:layout_width="150dp"-->
+        <!--                android:layout_height="match_parent"-->
+        <!--                android:layout_gravity="center"-->
+        <!--                android:layout_marginStart="20dp"-->
+        <!--                android:layout_marginTop="5dp"-->
+        <!--                android:background="@drawable/button"-->
+        <!--                android:text="Register"-->
+        <!--                android:textColor="#263238"-->
+        <!--                tools:ignore="TouchTargetSizeCheck" />-->
+
+        <!--            <Button-->
+        <!--                android:id="@+id/login"-->
+        <!--                android:layout_width="150dp"-->
+        <!--                android:layout_height="match_parent"-->
+        <!--                android:layout_gravity="center"-->
+        <!--                android:layout_marginStart="60dp"-->
+        <!--                android:layout_marginTop="5dp"-->
+        <!--                android:background="@drawable/button"-->
+        <!--                android:text="Login"-->
+        <!--                android:textColor="#1C1C1C" />-->
+        <!--        </androidx.constraintlayout.widget.ConstraintLayout>-->
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_height="match_parent">
 
             <Button
                 android:id="@+id/Register"
                 android:layout_width="150dp"
-                android:layout_height="match_parent"
+                android:layout_height="53dp"
                 android:layout_gravity="center"
-                android:layout_marginStart="20dp"
+                android:layout_marginStart="36dp"
                 android:background="@drawable/button"
                 android:text="Register"
-                android:textColor="#1C1C1C"
-                android:layout_marginTop="5dp"
+                android:textColor="#263238"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0"
                 tools:ignore="TouchTargetSizeCheck" />
 
             <Button
                 android:id="@+id/login"
-                android:layout_width="150dp"
-                android:layout_height="match_parent"
+                android:layout_width="151dp"
+                android:layout_height="53dp"
                 android:layout_gravity="center"
-                android:layout_marginStart="60dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginEnd="16dp"
                 android:background="@drawable/button"
                 android:text="Login"
-                android:textColor="#1C1C1C" />
-        </LinearLayout>
-
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/line2"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/line1"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="10dp"
-        android:gravity="center_horizontal"
-        android:orientation="horizontal">
-
-        <ImageView
-            android:layout_width="75dp"
-            android:layout_height="80dp"
-            android:layout_margin="20dp"
-            android:layout_weight="70"
-            android:src="@drawable/facebook" />
-
-        <ImageView
-            android:layout_width="75dp"
-            android:layout_height="80dp"
-            android:layout_margin="20dp"
-            android:layout_marginTop="40dp"
-            android:layout_weight="100"
-            android:src="@drawable/google" />
+                android:textColor="#1C1C1C"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.655"
+                app:layout_constraintStart_toEndOf="@+id/Register"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </LinearLayout>
 
 
-</RelativeLayout>
+                    </RelativeLayout>

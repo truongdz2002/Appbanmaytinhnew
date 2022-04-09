@@ -3,20 +3,24 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/GitHub/Appbanmaytinhnew/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.153" />
+        <entry key="..\:/GitHub/Appbanmaytinhnew/app/src/main/res/drawable/ic_launcher_background.xml" value="0.153" />
         <entry key="..\:/GitHub/Appbanmaytinhnew/app/src/main/res/layout/activity_main.xml" value="0.16666666666666666" />
         <entry key="..\:/GitHub/Appbanmaytinhnew/app/src/main/res/layout/activity_main_activitylogin.xml" value="0.33" />
         <entry key="..\:/GitHub/Appbanmaytinhnew/app/src/main/res/layout/activity_register.xml" value="0.353125" />
         <entry key="..\:/GitHub/Appbanmaytinhnew/app/src/main/res/layout/asus.xml" value="0.16666666666666666" />
         <entry key="..\:/GitHub/Appbanmaytinhnew/app/src/main/res/layout/dell.xml" value="0.16666666666666666" />
-        <entry key="..\:/GitHub/Appbanmaytinhnew/app/src/main/res/layout/fragment_detail.xml" value="0.5" />
-        <entry key="..\:/GitHub/Appbanmaytinhnew/app/src/main/res/layout/fragment_gio_hang.xml" value="0.16666666666666666" />
-        <entry key="..\:/GitHub/Appbanmaytinhnew/app/src/main/res/layout/home.xml" value="0.16666666666666666" />
+        <entry key="..\:/GitHub/Appbanmaytinhnew/app/src/main/res/layout/fragment_detail.xml" value="0.25" />
+        <entry key="..\:/GitHub/Appbanmaytinhnew/app/src/main/res/layout/fragment_gio_hang.xml" value="0.33" />
+        <entry key="..\:/GitHub/Appbanmaytinhnew/app/src/main/res/layout/home.xml" value="0.33" />
+        <entry key="..\:/GitHub/Appbanmaytinhnew/app/src/main/res/layout/information.xml" value="0.29739583333333336" />
         <entry key="..\:/GitHub/Appbanmaytinhnew/app/src/main/res/layout/item_computer.xml" value="0.16666666666666666" />
         <entry key="..\:/GitHub/Appbanmaytinhnew/app/src/main/res/layout/item_giohang.xml" value="0.16666666666666666" />
         <entry key="..\:/GitHub/Appbanmaytinhnew/app/src/main/res/layout/item_home.xml" value="0.33" />
         <entry key="..\:/GitHub/Appbanmaytinhnew/app/src/main/res/layout/item_quangcao.xml" value="0.31333333333333335" />
         <entry key="..\:/GitHub/Appbanmaytinhnew/app/src/main/res/layout/layout_toolbar.xml" value="0.16666666666666666" />
-        <entry key="..\:/GitHub/Appbanmaytinhnew/app/src/main/res/layout/macbook.xml" value="0.16666666666666666" />
+        <entry key="..\:/GitHub/Appbanmaytinhnew/app/src/main/res/layout/macbook.xml" value="0.5" />
+        <entry key="..\:/GitHub/Appbanmaytinhnew/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.152" />
         <entry key="..\:/Users/PHUONG NAM/AndroidStudioProjects/Appbanmaytinh/app/src/main/res/drawable/button.xml" value="0.189" />
         <entry key="..\:/Users/PHUONG NAM/AndroidStudioProjects/Appbanmaytinh/app/src/main/res/layout/a_s_u_s.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/PHUONG NAM/AndroidStudioProjects/Appbanmaytinh/app/src/main/res/layout/a_s_u_s_list.xml" value="0.19010416666666666" />

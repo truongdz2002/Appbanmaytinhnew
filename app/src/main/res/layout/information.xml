@@ -16,14 +16,15 @@
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
+
         <TextView
             android:id="@+id/tv1"
             android:layout_width="100dp"
             android:layout_height="50dp"
-            android:text="Name:"
-            android:textSize="20dp"
             android:layout_marginBottom="20dp"
-            android:gravity="bottom"/>
+            android:gravity="bottom"
+            android:text="Tên:"
+            android:textSize="20dp" />
 
         <EditText
             android:id="@+id/name"
@@ -95,14 +96,15 @@
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
+
         <TextView
             android:id="@+id/tv4"
             android:layout_width="100dp"
             android:layout_height="50dp"
-            android:text="Dịa chỉ:"
-            android:textSize="20dp"
             android:layout_marginBottom="20dp"
-            android:gravity="bottom"/>
+            android:gravity="bottom"
+            android:text="Địa chỉ:"
+            android:textSize="20dp" />
 
         <EditText
             android:id="@+id/diachi"
@@ -117,10 +119,11 @@
             android:hint="Địa chỉ"
             android:textSize="20dp" />
     </RelativeLayout>
+
     <Button
         android:id="@+id/submit"
         android:layout_width="100dp"
         android:layout_height="50dp"
-        android:text="Submid"
-        android:layout_marginTop="100dp"/>
+        android:layout_marginTop="100dp"
+        android:text="Submit" />
 </LinearLayout>
