@@ -1,18 +1,36 @@
 package com.example.appbanmaytinh.computer;
 
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
 import java.io.Serializable;
 
+@Entity(tableName = "COMPUTER")
 public class computer implements Serializable {
+    @PrimaryKey(autoGenerate = true)
+    private int id;
     private String tenpc;
     private String giapc;
     private int hinh;
-    public computer(){
+    private String brand;
+
+    public computer() {
 
     }
-    public computer(String tenpc, String giapc, int hinh) {
+
+    public computer(String tenpc, String giapc, int hinh, String brand) {
         this.tenpc = tenpc;
         this.giapc = giapc;
         this.hinh = hinh;
+        this.brand = brand;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getTenpc() {
@@ -37,5 +55,13 @@ public class computer implements Serializable {
 
     public void setHinh(int hinh) {
         this.hinh = hinh;
+    }
+
+    public String getBrand() {
+        return brand;
+    }
+
+    public void setBrand(String brand) {
+        this.brand = brand;
     }
 }

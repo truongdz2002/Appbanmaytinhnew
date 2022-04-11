@@ -18,6 +18,7 @@ import com.example.appbanmaytinh.R;
 import com.example.appbanmaytinh.computer.adapter.compurteradapter;
 import com.example.appbanmaytinh.computer.adapter.computeradapter2;
 import com.example.appbanmaytinh.computer.computer;
+import com.example.appbanmaytinh.computer.database.databaseproduct;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,7 +37,12 @@ public class ASUS extends Fragment {
         Context context;
         GridLayoutManager gridLayoutManager2=new GridLayoutManager(nmainActivity, 1);
         lv1.setLayoutManager(gridLayoutManager2);
-        computeradapter2 adapter2 =new computeradapter2(getlist2computer(), new compurteradapter.ItemClick() {
+
+        //insertMultipleAsus();
+        List<computer> listComputer = new ArrayList<>();
+        listComputer = databaseproduct.getInstance(nmainActivity).product().getProductsBrand("ASUS");
+
+        computeradapter2 adapter2 =new computeradapter2(listComputer, new compurteradapter.ItemClick() {
             @Override
             public void onclickItem(computer computer) {
                 nmainActivity.gotoDetailFragmet(computer);
@@ -48,21 +54,20 @@ public class ASUS extends Fragment {
         return view;
     }
 
-    private List<computer> getlist2computer() {
-        List<computer> list2=new ArrayList<>(); list2.add(new computer("ASUS","14000000",R.drawable.asus));
-        list2.add(new computer("LAPTOP ASUS VIVOBOOK PRO 14X OLED","29000000",R.drawable.asus));
-        list2.add(new computer("LAPTOP ASUS GAMING TUF FA506IHR-HN019W","15000000",R.drawable.asus));
-        list2.add(new computer("LAPTOP ASUS GAMING TUF FX517ZC-HN079W","30000000",R.drawable.asus));
-        list2.add(new computer("LAPTOP ASUS VIVOBOOK A415EA-EB1474W","25000000",R.drawable.asus));
-        list2.add(new computer("LAPTOP ASUS GAMING ROG STRIX G513IM-HN008W","14000000",R.drawable.asus));
-        list2.add(new computer("LAPTOP ASUS X515EP-EJ405W","27000000",R.drawable.asus));
-        list2.add(new computer("LAPTOP ASUS ZENBOOK UX425EA-KI883W","17000000",R.drawable.asus));
-        list2.add(new computer("LAPTOP ASUS X415EA-EB640T","26000000",R.drawable.asus));
-        list2.add(new computer("LAPTOP ASUS GAMING TUF FX506HCB-HN1138W","39000000",R.drawable.asus));
-        list2.add(new computer("LAPTOP ASUS ZENBOOK UX325EA-KG656W","35000000",R.drawable.asus));
+    private void insertMultipleAsus() {
+        List<computer> list2=new ArrayList<>(); list2.add(new computer("ASUS","14000000",R.drawable.asus,"ASUS"));
+        list2.add(new computer("LAPTOP ASUS VIVOBOOK PRO 14X OLED","29000000",R.drawable.asus,"ASUS"));
+        list2.add(new computer("LAPTOP ASUS GAMING TUF FA506IHR-HN019W","15000000",R.drawable.asus,"ASUS"));
+        list2.add(new computer("LAPTOP ASUS GAMING TUF FX517ZC-HN079W","30000000",R.drawable.asus,"ASUS"));
+        list2.add(new computer("LAPTOP ASUS VIVOBOOK A415EA-EB1474W","25000000",R.drawable.asus,"ASUS"));
+        list2.add(new computer("LAPTOP ASUS GAMING ROG STRIX G513IM-HN008W","14000000",R.drawable.asus,"ASUS"));
+        list2.add(new computer("LAPTOP ASUS X515EP-EJ405W","27000000",R.drawable.asus,"ASUS"));
+        list2.add(new computer("LAPTOP ASUS ZENBOOK UX425EA-KI883W","17000000",R.drawable.asus,"ASUS"));
+        list2.add(new computer("LAPTOP ASUS X415EA-EB640T","26000000",R.drawable.asus,"ASUS"));
+        list2.add(new computer("LAPTOP ASUS GAMING TUF FX506HCB-HN1138W","39000000",R.drawable.asus,"ASUS"));
+        list2.add(new computer("LAPTOP ASUS ZENBOOK UX325EA-KG656W","35000000",R.drawable.asus,"ASUS"));
 
-
-        return list2;
+        databaseproduct.getInstance(nmainActivity).product().insertMultipleProducts(list2);
     }
 
 }

@@ -61,12 +61,16 @@ public class gio_hang extends Fragment {
             @Override
             public void deleteclick(cart cart ) {
                 nmainActivity.deleteFragment(cart);
+                long totalCartPrice = databasecart.getInstance(nmainActivity).cart2().getTotalCartPrice(gmail);
+
+                tt.setText("Tổng tiền: " + totalCartPrice);
+                lv4.getAdapter().notifyDataSetChanged();
                 reload();
 
             }
         });
         mlistcart=new ArrayList<>();
-        reload();
+        //reload();
         addlv4();
         lv4.setAdapter(adapter);
 

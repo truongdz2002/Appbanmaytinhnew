@@ -1,5 +1,6 @@
 package com.example.appbanmaytinh.Package;
 
+import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.os.Handler;
@@ -11,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.EditorInfo;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.ImageView;
@@ -37,6 +39,7 @@ import com.example.appbanmaytinh.R;
 import com.example.appbanmaytinh.computer.adapter.compurteradapter;
 import com.example.appbanmaytinh.computer.adapter.quangcaoadapter;
 import com.example.appbanmaytinh.computer.computer;
+import com.example.appbanmaytinh.computer.database.databaseproduct;
 import com.example.appbanmaytinh.computer.quangcao;
 
 import java.util.ArrayList;
@@ -47,53 +50,53 @@ import java.util.TimerTask;
 
 import me.relex.circleindicator.CircleIndicator;
 
-public class home extends Fragment  {
+public class home extends Fragment {
     private View view;
     private ViewPager vp;
     private CircleIndicator cr;
     private quangcaoadapter qcadapter;
-    private  RecyclerView rcvcomputer;
+    private RecyclerView rcvcomputer;
     private MainActivity mainActivity;
     private compurteradapter adapter;
     private List<quangcao> mlistsquangcao;
-    private  Timer mtimer;
+    private Timer mtimer;
     private EditText timkiem;
+
     @Nullable
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState)
-    {
-       view= inflater.inflate(R.layout.home, container, false);
-       //phan san pham moi nhat
-        mainActivity= (MainActivity) getActivity();
-        rcvcomputer=view.findViewById(R.id.lv);
-        timkiem=view.findViewById(R.id.tk);
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        view = inflater.inflate(R.layout.home, container, false);
+        //phan san pham moi nhat
+        mainActivity = (MainActivity) getActivity();
+        rcvcomputer = view.findViewById(R.id.lv);
+        timkiem = view.findViewById(R.id.tk);
         Context context;
-        GridLayoutManager gridLayoutManager=new GridLayoutManager(mainActivity, 2);
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(mainActivity, 2);
         rcvcomputer.setLayoutManager(gridLayoutManager);
-        adapter=new compurteradapter(getlistcomputer(), new compurteradapter.ItemClick() {
+        adapter = new compurteradapter(getlistcomputer(), new compurteradapter.ItemClick() {
             @Override
             public void onclickItem(computer computer) {
                 mainActivity.gotoDetailFragmet(computer);
             }
         });
         rcvcomputer.setAdapter(adapter);
-        RecyclerView.ItemDecoration itemDecoration=new DividerItemDecoration(mainActivity,DividerItemDecoration.VERTICAL);
+        RecyclerView.ItemDecoration itemDecoration = new DividerItemDecoration(mainActivity, DividerItemDecoration.VERTICAL);
         rcvcomputer.addItemDecoration(itemDecoration);
         setclick();
         // phan chay quang cao
-        vp=view.findViewById(R.id.vp);
-        cr=view.findViewById(R.id.cr);
-        mlistsquangcao=getlistqc();
-        qcadapter=new quangcaoadapter(mainActivity,mlistsquangcao);
+        vp = view.findViewById(R.id.vp);
+        cr = view.findViewById(R.id.cr);
+        mlistsquangcao = getlistqc();
+        qcadapter = new quangcaoadapter(mainActivity, mlistsquangcao);
         vp.setAdapter(qcadapter);
         cr.setViewPager(vp);
         qcadapter.registerDataSetObserver(cr.getDataSetObserver());
         autoSlideImage();
         return view;
     }
-    private List<quangcao> getlistqc()
-    {
-        List<quangcao> list=new ArrayList<>();
+
+    private List<quangcao> getlistqc() {
+        List<quangcao> list = new ArrayList<>();
         list.add(new quangcao(R.drawable.img));
         list.add(new quangcao(R.drawable.img_1));
         list.add(new quangcao(R.drawable.img_2));
@@ -101,59 +104,43 @@ public class home extends Fragment  {
         list.add(new quangcao(R.drawable.quangcao1));
         return list;
     }
-    private void setclick()
-    {
+
+    private void setclick() {
         timkiem.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {
-                if(i== EditorInfo.IME_ACTION_SEARCH)
-                {
-                    String s=timkiem.getText().toString();
-                    adapter.shortmt(s);
+                if (i == EditorInfo.IME_ACTION_SEARCH) {
+                    String s = timkiem.getText().toString().trim();
+                    //adapter.shortmt(s);
+                    List<computer> listComputer = new ArrayList<>();
+
+                    listComputer = databaseproduct.getInstance(mainActivity).product().searchProduct(s);
+                    adapter = new compurteradapter(listComputer, new compurteradapter.ItemClick() {
+                        @Override
+                        public void onclickItem(computer computer) {
+                            mainActivity.gotoDetailFragmet(computer);
+                        }
+                    });
+                    rcvcomputer.setAdapter(adapter);
+
                 }
                 return false;
             }
         });
     }
-    private List<computer> getlistcomputer()
-    {
-        List<computer> list=new ArrayList<>();
-        list.add(new computer("ASUS VIVOBOOK PRO 14X OLED","29000000",R.drawable.asus));
-        list.add(new computer("ASUS GAMING TUF FA506IHR-HN019W","15000000",R.drawable.asus));
-        list.add(new computer("ASUS GAMING TUF FX517ZC-HN079W","30000000",R.drawable.asus));
-        list.add(new computer("ASUS VIVOBOOK A415EA-EB1474W","25000000",R.drawable.asus));
-        list.add(new computer("ASUS GAMING ROG STRIX G513IM-HN008W","14000000",R.drawable.asus));
-        list.add(new computer("ASUS X515EP-EJ405W","27000000",R.drawable.asus));
-        list.add(new computer("ASUS ZENBOOK UX425EA-KI883W","17000000",R.drawable.asus));
-        list.add(new computer("DELL VOSTRO 3400 (YX51W3)","17000000",R.drawable.dell));
-        list.add(new computer("DELL INSPIRON 5415(TX4H61)","24000000",R.drawable.dell));
-        list.add(new computer("DELL VOSTRO 3400 (V4I7015W1)","20000000",R.drawable.dell));
-        list.add(new computer("DELL VOSTRO 3510 (7T2YC2) ","15000000",R.drawable.dell));
-        list.add(new computer("DELL VOSTRO 3400","13000000",R.drawable.dell));
-        list.add(new computer("DELL VOSTRO 3510","31000000",R.drawable.dell));
-        list.add(new computer("MACBOOK", "25000000", R.drawable.macbook));
-        list.add(new computer("MacBook Pro 2021 14 inch Apple M1", "22000000", R.drawable.macbook));
-        list.add(new computer("MacBook Pro 2020 13 inch", "25900000", R.drawable.macbook));
-        list.add(new computer("Studio Display", "32000000", R.drawable.macbook));
-        list.add(new computer("MacBook Pro 14”", "22000000", R.drawable.macbook));
-        list.add(new computer("MacBook Air", "34000000", R.drawable.macbook));
-        list.add(new computer("MacBook Pro 2020 13 inch Apple M1", "12000000", R.drawable.macbook));
-        list.add(new computer("MacBook Pro 2019 13 inch", "21000000", R.drawable.macbook));
-        list.add(new computer("MacBook Pro 2018 13 inch", "29000000", R.drawable.macbook));
-        list.add(new computer("MacBook Pro 2019 16 inch", "30000000", R.drawable.macbook));
-        list.add(new computer("MacBook Pro 2018 15 inch", "20000000", R.drawable.macbook));
-        list.add(new computer("MacBook Pro 2019 16 inch", "31000000", R.drawable.macbook));
+
+    private List<computer> getlistcomputer() {
+        List<computer> list = new ArrayList<>();
+        list = databaseproduct.getInstance(mainActivity).product().getAllProducts();
         return list;
     }
-    private void autoSlideImage()
-    {
-        if(mlistsquangcao==null||mlistsquangcao.isEmpty()||vp==null)
-        {
+
+    private void autoSlideImage() {
+        if (mlistsquangcao == null || mlistsquangcao.isEmpty() || vp == null) {
             return;
         }
-        if(mtimer==null)
-        {
-            mtimer=new Timer();
+        if (mtimer == null) {
+            mtimer = new Timer();
         }
         mtimer.schedule(new TimerTask() {
             @Override
@@ -161,23 +148,20 @@ public class home extends Fragment  {
                 new Handler(Looper.getMainLooper()).post(new Runnable() {
                     @Override
                     public void run() {
-                        int currentItem=vp.getCurrentItem();
-                        int totalItem=mlistsquangcao.size()-1;
-                        if(currentItem <totalItem)
-                        {
+                        int currentItem = vp.getCurrentItem();
+                        int totalItem = mlistsquangcao.size() - 1;
+                        if (currentItem < totalItem) {
                             currentItem++;
                             vp.setCurrentItem(currentItem);
 
-                        }
-                        else
-                        {
+                        } else {
                             vp.setCurrentItem(0);
 
                         }
                     }
                 });
             }
-        },    1000,5000);
+        }, 1000, 5000);
     }
 
 

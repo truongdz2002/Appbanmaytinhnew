@@ -132,8 +132,8 @@ public class MainActivity extends AppCompatActivity implements OnNavigationItemS
 
     public void deleteFragment(final cart cart) {
         new AlertDialog.Builder(this)
-                .setTitle("confirm delete cart")
-                .setMessage("Are you cart")
+                .setTitle("Delete Item")
+                .setMessage("Are you sure?")
                 .setPositiveButton("yes", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
@@ -150,6 +150,8 @@ public class MainActivity extends AppCompatActivity implements OnNavigationItemS
     public String getMail() {
         return mail;
     }
+
+
 }
 
 

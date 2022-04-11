@@ -19,6 +19,8 @@ import com.example.appbanmaytinh.computer.adapter.compurteradapter;
 import com.example.appbanmaytinh.computer.adapter.computeradapter2;
 import com.example.appbanmaytinh.computer.computer;
 
+import com.example.appbanmaytinh.computer.database.databaseproduct;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -37,7 +39,11 @@ public class MACBOOK extends Fragment {
         Context context;
         GridLayoutManager gridLayoutManager2 = new GridLayoutManager(nmainActivity, 1);
         lv3.setLayoutManager(gridLayoutManager2);
-        computeradapter2 adapter2 = new computeradapter2(getlist2computer(), new compurteradapter.ItemClick() {
+
+        //insertMultipleMacbook();
+        List<computer> listComputer = new ArrayList<>();
+        listComputer = databaseproduct.getInstance(nmainActivity).product().getProductsBrand("Apple");
+        computeradapter2 adapter2 = new computeradapter2(listComputer, new compurteradapter.ItemClick() {
             @Override
             public void onclickItem(computer computer) {
                 nmainActivity.gotoDetailFragmet(computer);
@@ -49,22 +55,24 @@ public class MACBOOK extends Fragment {
         return view;
     }
 
-    private List<computer> getlist2computer() {
+    private void insertMultipleMacbook() {
         List<computer> list2 = new ArrayList<>();
-        list2.add(new computer("MACBOOK", "25000000", R.drawable.macbook));
-        list2.add(new computer("MacBook Pro 2021 14 inch Apple M1", "22000000", R.drawable.macbook));
-        list2.add(new computer("MacBook Pro 2020 13 inch", "25900000", R.drawable.macbook));
-        list2.add(new computer("Studio Display", "32000000", R.drawable.macbook));
-        list2.add(new computer("MacBook Pro 14”", "22000000", R.drawable.macbook));
-        list2.add(new computer("MacBook Air", "34000000", R.drawable.macbook));
-        list2.add(new computer("MacBook Pro 2020 13 inch Apple M1", "12000000", R.drawable.macbook));
-        list2.add(new computer("MacBook Pro 2019 13 inch", "21000000", R.drawable.macbook));
-        list2.add(new computer("MacBook Pro 2018 13 inch", "29000000", R.drawable.macbook));
-        list2.add(new computer("MacBook Pro 2019 16 inch", "30000000", R.drawable.macbook));
-        list2.add(new computer("MacBook Pro 2018 15 inch", "20000000", R.drawable.macbook));
-        list2.add(new computer("MacBook Pro 2019 16 inch", "31000000", R.drawable.macbook));
+        list2.add(new computer("MACBOOK", "25000000", R.drawable.macbook ,"Apple"));
+        list2.add(new computer("MacBook Pro 2021 14 inch Apple M1", "22000000", R.drawable.macbook,"Apple"));
+        list2.add(new computer("MacBook Pro 2020 13 inch", "25900000", R.drawable.macbook,"Apple"));
+        list2.add(new computer("Studio Display", "32000000", R.drawable.macbook,"Apple"));
+        list2.add(new computer("MacBook Pro 14”", "22000000", R.drawable.macbook,"Apple"));
+        list2.add(new computer("MacBook Air", "34000000", R.drawable.macbook,"Apple"));
+        list2.add(new computer("MacBook Pro 2020 13 inch Apple M1", "12000000", R.drawable.macbook,"Apple"));
+        list2.add(new computer("MacBook Pro 2019 13 inch", "21000000", R.drawable.macbook,"Apple"));
+        list2.add(new computer("MacBook Pro 2018 13 inch", "29000000", R.drawable.macbook,"Apple"));
+        list2.add(new computer("MacBook Pro 2019 16 inch", "30000000", R.drawable.macbook,"Apple"));
+        list2.add(new computer("MacBook Pro 2018 15 inch", "20000000", R.drawable.macbook,"Apple"));
+        list2.add(new computer("MacBook Pro 2019 16 inch", "31000000", R.drawable.macbook,"Apple"));
+
+        databaseproduct.getInstance(nmainActivity).product().insertMultipleProducts(list2);
 
 
-        return list2;
+
     }
 }
