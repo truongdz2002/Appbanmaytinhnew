@@ -93,7 +93,7 @@ public class MainActivity extends AppCompatActivity implements OnNavigationItemS
             }
         } else if (id == R.id.infor) {
             if (mCurrentFragment != FRAGMENT_INFOR) {
-                replaceFragment(new in_for());
+                replaceFragment(new in_for(mail));
                 mCurrentFragment = FRAGMENT_INFOR;
             }
         }

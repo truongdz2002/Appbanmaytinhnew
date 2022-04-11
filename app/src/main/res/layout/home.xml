@@ -45,7 +45,7 @@
                android:inputType="text"
                android:imeOptions="actionSearch"
                android:background="@drawable/button"
-               android:visibility="invisible"/>
+               android:visibility="visible"/>
        </RelativeLayout>
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/lv"

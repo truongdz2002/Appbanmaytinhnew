@@ -26,7 +26,7 @@ public class Fragment_detail extends Fragment {
     private EditText tvQuantity;
     private Button take, add, tru;
     private View view;
-    private  detil detil;
+    private detil detil;
     private Activity mActivity;
 
 
@@ -47,8 +47,7 @@ public class Fragment_detail extends Fragment {
         add = view.findViewById(R.id.add);
         tru = view.findViewById(R.id.tru);
         sp = view.findViewById(R.id.sp);
-        mActivity=(Activity) getActivity();
-
+        mActivity = (Activity) getActivity();
 
 
         add.setOnClickListener(new View.OnClickListener() {
@@ -63,13 +62,14 @@ public class Fragment_detail extends Fragment {
                     add.setVisibility(View.INVISIBLE);
                     tru.setVisibility(View.VISIBLE);
 
-                } else if (s1 ==1) {
+                } else if (s1 == 1) {
                     add.setVisibility(View.VISIBLE);
                     tru.setVisibility(View.INVISIBLE);
                 } else if (s1 > 1) {
                     add.setVisibility(View.VISIBLE);
                     tru.setVisibility(View.VISIBLE);
                 }
+                getViews();
                 //Cần được convert int về string
             }
         });
@@ -93,18 +93,14 @@ public class Fragment_detail extends Fragment {
                     tru.setVisibility(View.VISIBLE);
                 }
 
+                getViews();
+
             }
         });
-        Bundle bundle = getArguments();
-            computer computer = (computer) bundle.get("Anh");
-            int hinhpcdetail=computer.getHinh();
-            String tenpcdetail=computer.getTenpc();
-            String giapcdetail=computer.getGiapc();
-            tv3.setText(tenpcdetail);
-            tv4.setText(giapcdetail);
-            sp.setImageResource(hinhpcdetail);
-        String sldetail=tvQuantity.getText().toString();
-        detil=new detil(hinhpcdetail,tenpcdetail,giapcdetail,sldetail);
+
+
+        getViews();
+
         take.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -120,10 +116,25 @@ public class Fragment_detail extends Fragment {
     public void sendcart() {
         gio_hang gio_hang = new gio_hang();
         Bundle bundle = new Bundle();
-        bundle.putSerializable("detail",detil);
+        bundle.putSerializable("detail", detil);
         gio_hang.setArguments(bundle);
         getFragmentManager().beginTransaction().replace(R.id.content, gio_hang).commit();
 
+
+    }
+
+    public void getViews(){
+        Bundle bundle = getArguments();
+        computer computer = (computer) bundle.get("Anh");
+        int hinhpcdetail = computer.getHinh();
+        String tenpcdetail = computer.getTenpc();
+        String giapcdetail = computer.getGiapc();
+        String sldetail = tvQuantity.getText().toString();
+        tv3.setText(tenpcdetail);
+        tv4.setText(giapcdetail);
+        sp.setImageResource(hinhpcdetail);
+
+        detil = new detil(hinhpcdetail, tenpcdetail, giapcdetail, sldetail);
     }
 
 

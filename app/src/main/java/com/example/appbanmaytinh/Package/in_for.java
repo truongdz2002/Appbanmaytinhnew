@@ -26,12 +26,20 @@ public class in_for extends Fragment {
     private MainActivity mActivity;
     private EditText name,date,sdt,diachi;
     private Button btSubmit;
+
+    private String gmail;
+
+    public in_for(String gmail) {
+        this.gmail = gmail;
+    }
+
     @Nullable
     @Override
     public  View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState)
     {
         view= inflater.inflate(R.layout.information, container, false);
         name=view.findViewById(R.id.name);
+        name.setText(gmail);
         date=view.findViewById(R.id.date);
         sdt=view.findViewById(R.id.SDT);
         diachi=view.findViewById(R.id.diachi);
