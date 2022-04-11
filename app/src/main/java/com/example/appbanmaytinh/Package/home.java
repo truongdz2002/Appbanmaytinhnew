@@ -118,26 +118,31 @@ public class home extends Fragment  {
     private List<computer> getlistcomputer()
     {
         List<computer> list=new ArrayList<>();
-        list.add(new computer("ASUS","14000000",R.drawable.asus));
-        list.add(new computer("ASUS","14000000",R.drawable.asus));
-        list.add(new computer("ASUS","14000000",R.drawable.asus));
-        list.add(new computer("ASUS","14000000",R.drawable.asus));
-        list.add(new computer("ASUS","14000000",R.drawable.asus));
-        list.add(new computer("ASUS","14000000",R.drawable.asus));
-        list.add(new computer("ASUS","14000000",R.drawable.asus));
-        list.add(new computer("DELL","17000000",R.drawable.dell));
-        list.add(new computer("DELL","17000000",R.drawable.dell));
-        list.add(new computer("DELL","17000000",R.drawable.dell));
-        list.add(new computer("DELL","17000000",R.drawable.dell));
-        list.add(new computer("DELL","17000000",R.drawable.dell));
-        list.add(new computer("MACBOOK","25000000",R.drawable.macbook));
-        list.add(new computer("MACBOOK","25000000",R.drawable.macbook));
-        list.add(new computer("MACBOOK","25000000",R.drawable.macbook));
-        list.add(new computer("MACBOOK","25000000",R.drawable.macbook));
-        list.add(new computer("MACBOOK","25000000",R.drawable.macbook));
-        list.add(new computer("MACBOOK","25000000",R.drawable.macbook));
-        list.add(new computer("MACBOOK","25000000",R.drawable.macbook));
-        list.add(new computer("MACBOOK","25000000",R.drawable.macbook));
+        list.add(new computer("ASUS VIVOBOOK PRO 14X OLED","29000000",R.drawable.asus));
+        list.add(new computer("ASUS GAMING TUF FA506IHR-HN019W","15000000",R.drawable.asus));
+        list.add(new computer("ASUS GAMING TUF FX517ZC-HN079W","30000000",R.drawable.asus));
+        list.add(new computer("ASUS VIVOBOOK A415EA-EB1474W","25000000",R.drawable.asus));
+        list.add(new computer("ASUS GAMING ROG STRIX G513IM-HN008W","14000000",R.drawable.asus));
+        list.add(new computer("ASUS X515EP-EJ405W","27000000",R.drawable.asus));
+        list.add(new computer("ASUS ZENBOOK UX425EA-KI883W","17000000",R.drawable.asus));
+        list.add(new computer("DELL VOSTRO 3400 (YX51W3)","17000000",R.drawable.dell));
+        list.add(new computer("DELL INSPIRON 5415(TX4H61)","24000000",R.drawable.dell));
+        list.add(new computer("DELL VOSTRO 3400 (V4I7015W1)","20000000",R.drawable.dell));
+        list.add(new computer("DELL VOSTRO 3510 (7T2YC2) ","15000000",R.drawable.dell));
+        list.add(new computer("DELL VOSTRO 3400","13000000",R.drawable.dell));
+        list.add(new computer("DELL VOSTRO 3510","31000000",R.drawable.dell));
+        list.add(new computer("MACBOOK", "25000000", R.drawable.macbook));
+        list.add(new computer("MacBook Pro 2021 14 inch Apple M1", "22000000", R.drawable.macbook));
+        list.add(new computer("MacBook Pro 2020 13 inch", "25900000", R.drawable.macbook));
+        list.add(new computer("Studio Display", "32000000", R.drawable.macbook));
+        list.add(new computer("MacBook Pro 14”", "22000000", R.drawable.macbook));
+        list.add(new computer("MacBook Air", "34000000", R.drawable.macbook));
+        list.add(new computer("MacBook Pro 2020 13 inch Apple M1", "12000000", R.drawable.macbook));
+        list.add(new computer("MacBook Pro 2019 13 inch", "21000000", R.drawable.macbook));
+        list.add(new computer("MacBook Pro 2018 13 inch", "29000000", R.drawable.macbook));
+        list.add(new computer("MacBook Pro 2019 16 inch", "30000000", R.drawable.macbook));
+        list.add(new computer("MacBook Pro 2018 15 inch", "20000000", R.drawable.macbook));
+        list.add(new computer("MacBook Pro 2019 16 inch", "31000000", R.drawable.macbook));
         return list;
     }
     private void autoSlideImage()

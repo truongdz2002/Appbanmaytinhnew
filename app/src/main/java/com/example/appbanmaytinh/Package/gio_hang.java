@@ -36,7 +36,10 @@ public class gio_hang extends Fragment {
     private TextView tt;
     private List<cart> mlistcart;
 
-    public gio_hang() {
+    private String gmail;
+
+    public gio_hang(String gmail) {
+        this.gmail = gmail;
         // Required empty public constructor
     }
 
@@ -110,7 +113,7 @@ public class gio_hang extends Fragment {
                 int t = 0;
                 t = gia * sl;
                 String tt = Integer.toString(t);
-                cart cart = new cart(detil.getHinhpcdetail(), detil.getTenpcdetail(), detil.getGiapcdetail(), detil.getSoluongmuadetail(), tt);
+                cart cart = new cart(detil.getHinhpcdetail(), detil.getTenpcdetail(), detil.getGiapcdetail(), detil.getSoluongmuadetail(), tt,gmail);
                 databasecart.getInstance(nmainActivity).cart2().insertcart(cart);
                 Toast.makeText(nmainActivity, "Đã nhận hàng muốn mua thành công", Toast.LENGTH_SHORT).show();
                 reload();
@@ -118,7 +121,8 @@ public class gio_hang extends Fragment {
         }
         public void reload()
         {
-            mlistcart = databasecart.getInstance(nmainActivity).cart2().getListCart();
+            //mlistcart = databasecart.getInstance(nmainActivity).cart2().getListCart();
+            mlistcart = databasecart.getInstance(nmainActivity).cart2().getListUserCart(gmail);
             adapter.setdata(mlistcart);
         }
         }

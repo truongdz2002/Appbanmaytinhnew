@@ -15,6 +15,10 @@ public interface cart2 {
     void insertcart(cart cart);
     @Query("SELECT * FROM CART")
     List<cart> getListCart();
+
+    @Query("SELECT * FROM CART WHERE userGmail = :userGmail")
+    List<cart> getListUserCart(String userGmail);
+
     @Delete
     void deletecart(cart cart);
 

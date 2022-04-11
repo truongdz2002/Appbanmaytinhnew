@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity implements OnNavigationItemS
             }
         } else if (id == R.id.G) {
             if (mCurrentFragment != FRAGMENT_CART) {
-                replaceFragment(new gio_hang());
+                replaceFragment(new gio_hang(mail));
                 mCurrentFragment = FRAGMENT_CART;
             }
         } else if (id == R.id.infor) {
@@ -124,6 +124,7 @@ public class MainActivity extends AppCompatActivity implements OnNavigationItemS
         Fragment_detail fragment_detail = new Fragment_detail();
         Bundle bundle = new Bundle();
         bundle.putSerializable("Anh", computer);
+        bundle.putSerializable("gmail",mail);
         fragment_detail.setArguments(bundle);
         fragmentTransaction.replace(R.id.content, fragment_detail);
         fragmentTransaction.commit();
@@ -138,10 +139,12 @@ public class MainActivity extends AppCompatActivity implements OnNavigationItemS
                     public void onClick(DialogInterface dialogInterface, int i) {
                         databasecart.getInstance(MainActivity.this).cart2().deletecart(cart);
                         Toast.makeText(MainActivity.this, "Delete cart successfully", Toast.LENGTH_LONG).show();
+
                     }
                 })
                 .setNegativeButton("no", null)
                 .show();
+
     }
 
     public String getMail() {

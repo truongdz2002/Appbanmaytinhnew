@@ -2,6 +2,7 @@ package com.example.appbanmaytinh.computer;
 
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
+
 @Entity(tableName = "CART")
 
 public class cart {
@@ -12,6 +13,7 @@ public class cart {
     private String giaspmua;
     private String soluongmua;
     private String tongtien;
+    private String userGmail;
 
     public int getId() {
         return id;
@@ -21,12 +23,13 @@ public class cart {
         this.id = id;
     }
 
-    public cart( int anhspmua,String tenspmua, String giaspmua,String soluongmua,String tongtien) {
+    public cart(int anhspmua, String tenspmua, String giaspmua, String soluongmua, String tongtien, String userGmail) {
         this.anhspmua = anhspmua;
         this.tenspmua = tenspmua;
         this.giaspmua = giaspmua;
-        this.soluongmua=soluongmua;
-        this.tongtien=tongtien;
+        this.soluongmua = soluongmua;
+        this.tongtien = tongtien;
+        this.userGmail = userGmail;
     }
 
     public String getSoluongmua() {
@@ -67,5 +70,13 @@ public class cart {
 
     public void setGiaspmua(String giaspmua) {
         this.giaspmua = giaspmua;
+    }
+
+    public String getUserGmail() {
+        return userGmail;
+    }
+
+    public void setUserGmail(String gmailUser) {
+        this.userGmail = gmailUser;
     }
 }

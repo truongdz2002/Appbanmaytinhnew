@@ -29,6 +29,7 @@ public class Fragment_detail extends Fragment {
     private detil detil;
     private Activity mActivity;
 
+    private String userGmail;
 
     public Fragment_detail() {
 
@@ -114,7 +115,7 @@ public class Fragment_detail extends Fragment {
     }
 
     public void sendcart() {
-        gio_hang gio_hang = new gio_hang();
+        gio_hang gio_hang = new gio_hang(userGmail);
         Bundle bundle = new Bundle();
         bundle.putSerializable("detail", detil);
         gio_hang.setArguments(bundle);
@@ -130,6 +131,9 @@ public class Fragment_detail extends Fragment {
         String tenpcdetail = computer.getTenpc();
         String giapcdetail = computer.getGiapc();
         String sldetail = tvQuantity.getText().toString();
+
+        userGmail = (String) bundle.get("gmail");
+
         tv3.setText(tenpcdetail);
         tv4.setText(giapcdetail);
         sp.setImageResource(hinhpcdetail);

@@ -50,24 +50,17 @@ public class DELL extends Fragment {
 
     private List<computer> getlist2computer() {
         List<computer> list2=new ArrayList<>();
-        list2.add(new computer("DELL","17000000",R.drawable.dell));
-        list2.add(new computer("DELL","17000000",R.drawable.dell));
-        list2.add(new computer("DELL","17000000",R.drawable.dell));
-        list2.add(new computer("DELL","17000000",R.drawable.dell));
-        list2.add(new computer("DELL","17000000",R.drawable.dell));
-        list2.add(new computer("DELL","17000000",R.drawable.dell));
-        list2.add(new computer("DELL","17000000",R.drawable.dell));
-        list2.add(new computer("DELL","17000000",R.drawable.dell));
-        list2.add(new computer("DELL","17000000",R.drawable.dell));
-        list2.add(new computer("DELL","17000000",R.drawable.dell));
-        list2.add(new computer("DELL","17000000",R.drawable.dell));
-        list2.add(new computer("DELL","17000000",R.drawable.dell));
-        list2.add(new computer("DELL","17000000",R.drawable.dell));
-        list2.add(new computer("DELL","17000000",R.drawable.dell));
-        list2.add(new computer("DELL","17000000",R.drawable.dell));
-        list2.add(new computer("DELL","17000000",R.drawable.dell));
-        list2.add(new computer("DELL","17000000",R.drawable.dell));
-        list2.add(new computer("DELL","17000000",R.drawable.dell));
+        list2.add(new computer("LAPTOP DELL VOSTRO 3400 (YX51W3)","17000000",R.drawable.dell));
+        list2.add(new computer("LAPTOP DELL INSPIRON 5415(TX4H61)","24000000",R.drawable.dell));
+        list2.add(new computer("LAPTOP DELL VOSTRO 3400 (V4I7015W1)","20000000",R.drawable.dell));
+        list2.add(new computer("LAPTOP DELL VOSTRO 3510 (7T2YC2) ","15000000",R.drawable.dell));
+        list2.add(new computer("LAPTOP DELL VOSTRO 3400","13000000",R.drawable.dell));
+        list2.add(new computer("LAPTOP DELL VOSTRO 3510","31000000",R.drawable.dell));
+        list2.add(new computer("LAPTOP DELL VOSTRO 5310 (YV5WY5)","39000000",R.drawable.dell));
+        list2.add(new computer("LAPTOP DELL INSPIRON 3511 (5101BLK) ","11000000",R.drawable.dell));
+        list2.add(new computer("LAPTOP DELL VOSTRO 5410 (V4I5214W1)","27000000",R.drawable.dell));
+        list2.add(new computer("LAPTOP DELL INSPIRON 5410 2 IN 1 (5149SLV) ","99000000",R.drawable.dell));
+
 
         return list2;
     }

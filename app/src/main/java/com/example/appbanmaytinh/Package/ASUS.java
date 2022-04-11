@@ -50,19 +50,17 @@ public class ASUS extends Fragment {
 
     private List<computer> getlist2computer() {
         List<computer> list2=new ArrayList<>(); list2.add(new computer("ASUS","14000000",R.drawable.asus));
-        list2.add(new computer("ASUS","14000000",R.drawable.asus));
-        list2.add(new computer("ASUS","14000000",R.drawable.asus));
-        list2.add(new computer("ASUS","14000000",R.drawable.asus));
-        list2.add(new computer("ASUS","14000000",R.drawable.asus));
-        list2.add(new computer("ASUS","14000000",R.drawable.asus));
-        list2.add(new computer("ASUS","14000000",R.drawable.asus));
-        list2.add(new computer("ASUS","14000000",R.drawable.asus));
-        list2.add(new computer("ASUS","14000000",R.drawable.asus));
-        list2.add(new computer("ASUS","14000000",R.drawable.asus));
-        list2.add(new computer("ASUS","14000000",R.drawable.asus));
-        list2.add(new computer("ASUS","14000000",R.drawable.asus));
-        list2.add(new computer("ASUS","14000000",R.drawable.asus));
-        list2.add(new computer("ASUS","14000000",R.drawable.asus));
+        list2.add(new computer("LAPTOP ASUS VIVOBOOK PRO 14X OLED","29000000",R.drawable.asus));
+        list2.add(new computer("LAPTOP ASUS GAMING TUF FA506IHR-HN019W","15000000",R.drawable.asus));
+        list2.add(new computer("LAPTOP ASUS GAMING TUF FX517ZC-HN079W","30000000",R.drawable.asus));
+        list2.add(new computer("LAPTOP ASUS VIVOBOOK A415EA-EB1474W","25000000",R.drawable.asus));
+        list2.add(new computer("LAPTOP ASUS GAMING ROG STRIX G513IM-HN008W","14000000",R.drawable.asus));
+        list2.add(new computer("LAPTOP ASUS X515EP-EJ405W","27000000",R.drawable.asus));
+        list2.add(new computer("LAPTOP ASUS ZENBOOK UX425EA-KI883W","17000000",R.drawable.asus));
+        list2.add(new computer("LAPTOP ASUS X415EA-EB640T","26000000",R.drawable.asus));
+        list2.add(new computer("LAPTOP ASUS GAMING TUF FX506HCB-HN1138W","39000000",R.drawable.asus));
+        list2.add(new computer("LAPTOP ASUS ZENBOOK UX325EA-KG656W","35000000",R.drawable.asus));
+
 
         return list2;
     }

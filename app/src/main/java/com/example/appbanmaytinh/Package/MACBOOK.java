@@ -27,46 +27,43 @@ public class MACBOOK extends Fragment {
     private MainActivity nmainActivity;
     private computeradapter2 adapter2;
     private RecyclerView lv3;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        view=inflater.inflate(R.layout.macbook, container, false);
-        lv3=view.findViewById(R.id.lv3);
-        nmainActivity=(MainActivity) getActivity();
+        view = inflater.inflate(R.layout.macbook, container, false);
+        lv3 = view.findViewById(R.id.lv3);
+        nmainActivity = (MainActivity) getActivity();
         Context context;
-        GridLayoutManager gridLayoutManager2=new GridLayoutManager(nmainActivity, 1);
+        GridLayoutManager gridLayoutManager2 = new GridLayoutManager(nmainActivity, 1);
         lv3.setLayoutManager(gridLayoutManager2);
-        computeradapter2 adapter2 =new computeradapter2(getlist2computer(), new compurteradapter.ItemClick() {
+        computeradapter2 adapter2 = new computeradapter2(getlist2computer(), new compurteradapter.ItemClick() {
             @Override
             public void onclickItem(computer computer) {
                 nmainActivity.gotoDetailFragmet(computer);
             }
         });
         lv3.setAdapter(adapter2);
-        RecyclerView.ItemDecoration itemDecoration=new DividerItemDecoration(nmainActivity,DividerItemDecoration.VERTICAL);
+        RecyclerView.ItemDecoration itemDecoration = new DividerItemDecoration(nmainActivity, DividerItemDecoration.VERTICAL);
         lv3.addItemDecoration(itemDecoration);
         return view;
     }
 
     private List<computer> getlist2computer() {
-        List<computer> list2=new ArrayList<>();
-        list2.add(new computer("MACBOOK","25000000",R.drawable.macbook));
-        list2.add(new computer("MACBOOK","25000000",R.drawable.macbook));
-        list2.add(new computer("MACBOOK","25000000",R.drawable.macbook));
-        list2.add(new computer("MACBOOK","25000000",R.drawable.macbook));
-        list2.add(new computer("MACBOOK","25000000",R.drawable.macbook));
-        list2.add(new computer("MACBOOK","25000000",R.drawable.macbook));
-        list2.add(new computer("MACBOOK","25000000",R.drawable.macbook));
-        list2.add(new computer("MACBOOK","25000000",R.drawable.macbook));
-        list2.add(new computer("MACBOOK","25000000",R.drawable.macbook));
-        list2.add(new computer("MACBOOK","25000000",R.drawable.macbook));
-        list2.add(new computer("MACBOOK","25000000",R.drawable.macbook));
-        list2.add(new computer("MACBOOK","25000000",R.drawable.macbook));
-        list2.add(new computer("MACBOOK","25000000",R.drawable.macbook));
-        list2.add(new computer("MACBOOK","25000000",R.drawable.macbook));
-        list2.add(new computer("MACBOOK","25000000",R.drawable.macbook));
-        list2.add(new computer("MACBOOK","25000000",R.drawable.macbook));
-        list2.add(new computer("MACBOOK","25000000",R.drawable.macbook));
+        List<computer> list2 = new ArrayList<>();
+        list2.add(new computer("MACBOOK", "25000000", R.drawable.macbook));
+        list2.add(new computer("MacBook Pro 2021 14 inch Apple M1", "22000000", R.drawable.macbook));
+        list2.add(new computer("MacBook Pro 2020 13 inch", "25900000", R.drawable.macbook));
+        list2.add(new computer("Studio Display", "32000000", R.drawable.macbook));
+        list2.add(new computer("MacBook Pro 14”", "22000000", R.drawable.macbook));
+        list2.add(new computer("MacBook Air", "34000000", R.drawable.macbook));
+        list2.add(new computer("MacBook Pro 2020 13 inch Apple M1", "12000000", R.drawable.macbook));
+        list2.add(new computer("MacBook Pro 2019 13 inch", "21000000", R.drawable.macbook));
+        list2.add(new computer("MacBook Pro 2018 13 inch", "29000000", R.drawable.macbook));
+        list2.add(new computer("MacBook Pro 2019 16 inch", "30000000", R.drawable.macbook));
+        list2.add(new computer("MacBook Pro 2018 15 inch", "20000000", R.drawable.macbook));
+        list2.add(new computer("MacBook Pro 2019 16 inch", "31000000", R.drawable.macbook));
+
 
         return list2;
     }
