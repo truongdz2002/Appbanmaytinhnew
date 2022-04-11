@@ -13,10 +13,10 @@
     android:id="@+id/DELL"
     android:title="DELL"
     android:icon="@drawable/dell"/>
-<item
-    android:id="@+id/MACBOOK"
-    android:title="MACBOOK"
-    android:icon="@drawable/macbook"/>
+    <item
+        android:id="@+id/MACBOOK"
+        android:icon="@drawable/macbook"
+        android:title="APPLE" />
 <item
     android:id="@+id/infor"
     android:title="@string/thong_tin"
