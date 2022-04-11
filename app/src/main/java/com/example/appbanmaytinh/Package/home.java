@@ -119,6 +119,7 @@ public class home extends Fragment {
                         @Override
                         public void onclickItem(computer computer) {
                             mainActivity.gotoDetailFragmet(computer);
+                            //Update
                         }
                     });
                     rcvcomputer.setAdapter(adapter);
