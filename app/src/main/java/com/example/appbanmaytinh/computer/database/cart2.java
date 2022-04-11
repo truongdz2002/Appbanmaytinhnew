@@ -19,6 +19,8 @@ public interface cart2 {
     @Query("SELECT * FROM CART WHERE userGmail = :userGmail")
     List<cart> getListUserCart(String userGmail);
 
+    @Query("SELECT SUM(tongtien) FROM CART WHERE userGmail = :userGmail")
+    long getTotalCartPrice(String userGmail);
     @Delete
     void deletecart(cart cart);
 

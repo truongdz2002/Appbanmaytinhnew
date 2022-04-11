@@ -52,6 +52,8 @@ public class gio_hang extends Fragment {
        nmainActivity=(MainActivity) getActivity();
        lv4=view.findViewById(R.id.lv4);
        tt=view.findViewById(R.id.tt);
+
+
        /*//Co ban voi gio hang
         adapter=new cartadapter(getlistcart());
         lv4.setAdapter(adapter);*/
@@ -72,6 +74,10 @@ public class gio_hang extends Fragment {
        lv4.setLayoutManager(gridLayoutManager);
        RecyclerView.ItemDecoration itemDecoration=new DividerItemDecoration(nmainActivity,DividerItemDecoration.VERTICAL);
        lv4.addItemDecoration(itemDecoration);
+
+        long totalCartPrice = databasecart.getInstance(nmainActivity).cart2().getTotalCartPrice(gmail);
+
+        tt.setText("Tổng tiền: " + totalCartPrice);
         return view;
     }
     /*//Co ban voi gio hang
