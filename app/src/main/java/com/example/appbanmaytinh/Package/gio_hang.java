@@ -1,6 +1,8 @@
 package com.example.appbanmaytinh.Package;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -60,12 +62,26 @@ public class gio_hang extends Fragment {
         adapter =new cartadapter(new cartadapter.ItemClick() {
             @Override
             public void deleteclick(cart cart ) {
-                nmainActivity.deleteFragment(cart);
-                long totalCartPrice = databasecart.getInstance(nmainActivity).cart2().getTotalCartPrice(gmail);
+                //nmainActivity.deleteFragment(cart);
 
-                tt.setText("Tổng tiền: " + totalCartPrice);
-                lv4.getAdapter().notifyDataSetChanged();
-                reload();
+                new AlertDialog.Builder(inflater.getContext())
+                        .setTitle("Delete Item")
+                        .setMessage("Are you sure?")
+                        .setPositiveButton("yes", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                databasecart.getInstance(nmainActivity).cart2().deletecart(cart);
+                                Toast.makeText(nmainActivity, "Delete cart successfully", Toast.LENGTH_LONG).show();
+                                long totalCartPrice = databasecart.getInstance(nmainActivity).cart2().getTotalCartPrice(gmail);
+
+                                tt.setText("Tổng tiền: " + totalCartPrice);
+                                lv4.getAdapter().notifyDataSetChanged();
+                                reload();
+                            }
+                        })
+                        .setNegativeButton("no", null)
+                        .show();
+
 
             }
         });
