@@ -84,7 +84,10 @@ public class RegisterActivity extends AppCompatActivity {
                 khachhangDBHelper = new khachhangDBHelper(RegisterActivity.this);
                 boolean checkRegisterSuccess = khachhangDBHelper.insertKH(new khachhang(gmail.getText().toString().trim(), password.getText().toString().trim(), rePassword.getText().toString().trim()));
                 if (checkRegisterSuccess == true) {
+
                     Intent intent = new Intent(RegisterActivity.this, MainActivity.class);
+                    String mail=gmail.getText().toString().trim();
+                    intent.putExtra("Gmail",mail);
                     startActivity(intent);
                 }
 

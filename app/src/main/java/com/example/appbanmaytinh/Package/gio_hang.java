@@ -70,7 +70,7 @@ public class gio_hang extends Fragment {
             }
         });
         mlistcart=new ArrayList<>();
-        //reload();
+        reload();
         addlv4();
         lv4.setAdapter(adapter);
 
