@@ -39,6 +39,7 @@ public class MainActivity extends AppCompatActivity implements OnNavigationItemS
     private static final int FRAGMENT_MACBOOK = 3;
     private static final int FRAGMENT_CART = 4;
     private static final int FRAGMENT_INFOR = 5;
+    private static final int FRAGMENT_SANPHAMTREN1TY = 6;
     private DrawerLayout mDrawerLayout;
     private int mCurrentFragment = FRAGMENT_HOME;
     private TextView account;
@@ -92,6 +93,11 @@ public class MainActivity extends AppCompatActivity implements OnNavigationItemS
                 mCurrentFragment = FRAGMENT_CART;
             }
         } else if (id == R.id.infor) {
+            if (mCurrentFragment != FRAGMENT_INFOR) {
+                replaceFragment(new in_for(mail));
+                mCurrentFragment = FRAGMENT_INFOR;
+            }
+        }else if(id == R.id.sanphamtren1ty){
             if (mCurrentFragment != FRAGMENT_INFOR) {
                 replaceFragment(new in_for(mail));
                 mCurrentFragment = FRAGMENT_INFOR;

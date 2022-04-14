@@ -1,34 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-<group android:checkableBehavior="single">
-<item
-    android:id="@+id/home"
-    android:title="@string/trang_chinh"
-    android:icon="@drawable/ic_home"/>
-<item
-    android:id="@+id/ASUS"
-    android:title="ASUS"
-    android:icon="@drawable/asus"/>
-<item
-    android:id="@+id/DELL"
-    android:title="DELL"
-    android:icon="@drawable/dell"/>
-    <item
-        android:id="@+id/MACBOOK"
-        android:icon="@drawable/macbook"
-        android:title="APPLE" />
-<item
-    android:id="@+id/infor"
-    android:title="@string/thong_tin"
-    android:icon="@drawable/ic_thong_tin"/>
-<item
-    android:id="@+id/G"
-    android:title="Giỏ hàng"
-    android:icon="@drawable/ic_shopping"/>
-<item
-    android:id="@+id/lienhe"
-    android:title="@string/Lien_he"
-    android:icon="@drawable/ic_lien_he"/>
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/home"
+            android:icon="@drawable/ic_home"
+            android:title="@string/trang_chinh" />
+        <item
+            android:id="@+id/ASUS"
+            android:icon="@drawable/asus"
+            android:title="ASUS" />
+        <item
+            android:id="@+id/DELL"
+            android:icon="@drawable/dell"
+            android:title="DELL" />
+        <item
+            android:id="@+id/MACBOOK"
+            android:icon="@drawable/macbook"
+            android:title="APPLE" />
+        <item
+            android:id="@+id/infor"
+            android:icon="@drawable/ic_thong_tin"
+            android:title="@string/thong_tin"
+            android:visible="false" />
+        <item
+            android:id="@+id/G"
+            android:icon="@drawable/ic_shopping"
+            android:title="Giỏ hàng" />
+        <item
+            android:id="@+id/sanphamtren1ty"
+            android:icon="@drawable/ic_shopping"
+            android:title="Sản phẩm trên 1 tỷ" />
+        <item
+            android:id="@+id/lienhe"
+            android:icon="@drawable/ic_lien_he"
+            android:title="@string/Lien_he" />
 
-</group>
+    </group>
 </menu>
