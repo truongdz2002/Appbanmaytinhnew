@@ -21,6 +21,7 @@ import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.appbanmaytinh.Package.SanPhamTren1Ty;
 import com.example.appbanmaytinh.Package.in_for;
 import com.example.appbanmaytinh.computer.cart;
 
@@ -45,6 +46,7 @@ public class MainActivity extends AppCompatActivity implements OnNavigationItemS
     private TextView account;
     private String mail;
 
+    private TextView tvUserGmail;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,7 +62,13 @@ public class MainActivity extends AppCompatActivity implements OnNavigationItemS
         navigationView.setNavigationItemSelectedListener(this);
         replaceFragment(new home());
         navigationView.getMenu().findItem(R.id.home).setChecked(true);
+//        account = navigationView.findViewById(R.id.account);
+//        account.setText(mail);
+
+        tvUserGmail = findViewById(R.id.tvUserGmail);
+
        mail=getIntent().getStringExtra("Gmail");
+        tvUserGmail.setText(mail);
     }
 
     @Override
@@ -71,7 +79,6 @@ public class MainActivity extends AppCompatActivity implements OnNavigationItemS
                 replaceFragment(new home());
                 mCurrentFragment = FRAGMENT_HOME;
             }
-
         } else if (id == R.id.ASUS) {
             if (mCurrentFragment != FRAGMENT_ASUS) {
                 replaceFragment(new ASUS());
@@ -99,7 +106,7 @@ public class MainActivity extends AppCompatActivity implements OnNavigationItemS
             }
         }else if(id == R.id.sanphamtren1ty){
             if (mCurrentFragment != FRAGMENT_INFOR) {
-                replaceFragment(new in_for(mail));
+                replaceFragment(new SanPhamTren1Ty());
                 mCurrentFragment = FRAGMENT_INFOR;
             }
         }

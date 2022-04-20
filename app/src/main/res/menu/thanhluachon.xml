@@ -29,11 +29,13 @@
         <item
             android:id="@+id/sanphamtren1ty"
             android:icon="@drawable/ic_shopping"
-            android:title="Sản phẩm trên 1 tỷ" />
+            android:title="Sản phẩm trên 1 tỷ"
+            android:visible="false" />
         <item
             android:id="@+id/lienhe"
             android:icon="@drawable/ic_lien_he"
-            android:title="@string/Lien_he" />
+            android:title="@string/Lien_he"
+            android:visible="false" />
 
     </group>
 </menu>

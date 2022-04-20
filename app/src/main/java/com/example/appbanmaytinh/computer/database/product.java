@@ -24,4 +24,13 @@ public interface product {
 
     @Query("SELECT * FROM COMPUTER WHERE tenpc LIKE '%' || :name || '%'")
     List<computer> searchProduct(String name);
+
+    @Query("SELECT * FROM COMPUTER WHERE giapc > 30000000")
+    List<computer> productUpTo20Million();
+
+    @Query("SELECT * FROM COMPUTER WHERE brand = 'ASUS' ORDER BY tenpc ASC")
+    List<computer> asusProductUpto30milion();
+
+    @Query("SELECT * FROM COMPUTER WHERE brand ='ASUS' AND giapc >= :firstPrice AND giapc <= :secondPrice  ")
+    List<computer> filterPriceAsus(long firstPrice,long secondPrice );
 }

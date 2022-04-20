@@ -11,7 +11,17 @@
       android:orientation="vertical"
       android:layout_width="match_parent"
       android:layout_height="match_parent">
-    <com.google.android.material.appbar.AppBarLayout
+
+      <TextView
+          android:id="@+id/tvUserGmail"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:textColor="@color/white"
+          android:background="@color/black"
+          android:height="30dp"
+          android:text="TextView" />
+
+      <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
@@ -28,7 +38,9 @@
     <FrameLayout
         android:id="@+id/content"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent">
+
+    </FrameLayout>
   </LinearLayout>
   <com.google.android.material.navigation.NavigationView
       android:id="@+id/navigation"
